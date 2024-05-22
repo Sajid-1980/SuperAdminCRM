@@ -1,0 +1,403 @@
+﻿@{
+    ViewData["Title"] = "Bulk Upload Leads";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<head>
+    <style>
+        .card {
+            box-shadow: 3px 4px 8px 0 rgba(0,0,0,0.2);
+            transition: 0.3s;
+            width: 56%;
+            margin-left: 309px;
+            margin-top: 84px;
+        }
+
+            .card:hover {
+                box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+            }
+
+        .container {
+            padding: 2px 16px;
+        }
+    </style>
+    @* <style>
+    @@media (max-width: 768px) {
+    article {
+    max-width: 100%; /* Adjust max-width for smaller screens */
+    margin: 0 auto; /* Center the article horizontally */
+    }
+
+    /* Adjust padding and font sizes for smaller screens */
+    article h2 {
+    font-size: 20px;
+    }
+
+    article p {
+    font-size: 14px;
+    }
+
+    article button {
+    font-size: 14px;
+    padding: 0.4rem 0.6rem;
+    }
+    }
+
+    .modal-dialog {
+    max-width: 80%!important;
+    margin-right: none !important;
+    margin-left: none !important;
+    }
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+
+    body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e3f2fd;
+    }
+
+    img {
+    max-width: 100%;
+    object-fit: cover;
+    }
+
+    article {
+    width: 100%;
+    max-width: 415px;
+    padding: 1rem;
+    background-color: #fff;
+    border: 1px solid #d5d5d5;
+    border-radius: 10px;
+    box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+    animation: slide-in-right-to-left 0.5s ease-in-out forwards;
+    }
+
+    article img {
+    border-radius: 5px;
+    animation-name: fade;
+    animation-duration: 1s;
+    }
+
+    article h2 {
+    margin: 0.5rem 0;
+    padding: 2px;
+    font: 600 24px sans-serif;
+    color: #1b2850;
+    animation: fadetext 2s ease-in-out forwards;
+    }
+
+    article p {
+    margin-bottom: 1rem;
+    padding: 2px;
+    color: #777;
+    font-family: sans-serif;
+    animation: fadetext 2.2s ease-in-out forwards;
+    }
+
+    article button {
+    padding: 0.5rem 0.7rem;
+    display: block;
+    background-color: #03a9f4;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s all;
+    animation: slide-in-top-to-bottom 1.5s;
+    }
+
+    article button:hover {
+    background-color: #29b6f6;
+    transform: translatey(-2px);
+    box-shadow: 0 7px 7px rgba(0, 0, 0, 0.1);
+    }
+
+    article button:active {
+    transform: translatey(0);
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);
+    }
+
+    @@keyframes slide-in-right-to-left {
+    from {
+    transform: translateX(100%);
+    }
+    to {
+    transform: translateX(0);
+    }
+    }
+
+    @@keyframes slide-in-top-to-bottom {
+    0% {
+    opacity: 0;
+    transform: translatey(100%);
+    }
+    50% {
+    opacity: 0;
+    transform: translatey(100%);
+    }
+    100% {
+    opacity: 1;
+    transform: translateX(0);
+    }
+    }
+
+    @@keyframes fade {
+    0% {
+    opacity: 0;
+    transform: translateX(-100%);
+    }
+
+    50% {
+    opacity: 0;
+    transform: translateX(-100%);
+    }
+
+    100% {
+    opacity: 1;
+    }
+    }
+
+    @@keyframes fadetext {
+    0% {
+    opacity: 0;
+    }
+
+    50% {
+    opacity: 0;
+    }
+
+    100% {
+    opacity: 1;
+    }
+    }
+
+    </style> *@
+</head>
+
+<div style="margin-bottom: 167px;">
+    <article style="width: 100%!important;">
+        <div class="card" style="height: 371px;">
+            <main id="main">
+
+
+                <div class="container">
+                    <div class="container mt-4" style="border: 2px solid;border-radius: 18px;color: #1b2850;height: 313px;">
+                        <h3 style="width: 227px;text-align: center;border-radius: 14px;color: #f2f0f4;background-color: #1b2850;margin-top: -18px;margin-left: 16px;">Bulk Upload Leads</h3>
+                    <br />
+
+                        <form asp-action="BulkUploadLeads" method="post" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label for="file">Select Excel File:</label>
+                                <input type="file" name="file" id="file" class="form-control" />
+                                @if (ViewBag.FileError != null)
+                                {
+                                    <span class="text-danger">@ViewBag.FileError</span>
+                                }
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Upload</button>
+                        </form>
+                 
+
+
+
+
+                <div class="modal fade" id="viewSampleModal" tabindex="-1" role="dialog" aria-labelledby="viewSampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="viewSampleModalLabel">Sample Image</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <img src="/img/Screenshot 2024-01-19 122227.png" style="width:100%;" />
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <br />
+                <button type="button" class="btn btn-info" id="showInstructionsBtn" style="margin-bottom: 12px;margin-left: 23px;">Show Instructions</button>
+                <button type="button" class="btn btn-success" id="viewSampleBtn style=" margin-bottom:="" 12px;margin-left:="" 23px;""="" style="margin-bottom: 12px;">View Sample</button>
+                    </div>
+                </div>
+                <div class="modal fade" id="instructionsModal" tabindex="-1" role="dialog" aria-labelledby="instructionsModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="instructionsModalLabel">Instructions</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <p>When uploading your file, make sure it follows this structure:</p>
+                                <ul>
+                                    <li class="text">Column 1 should contain <strong>First Names</strong></li>
+                                    <li class="text">Column 2 should contain <strong>Last Names</strong></li>
+                                    <li class="text">Column 3 should contain <strong>Emails</strong></li>
+                                    <li class="text">Column 4 should contain <strong>Genders</strong></li>
+                                    <li class="text">Column 5 should contain <strong>Company Names</strong></li>
+                                    <li class="text">Column 6 should contain <strong>Job Titles</strong></li>
+                                    <li class="text">Column 7 should contain <strong>Phone Numbers</strong></li>
+                                    <li class="text">Column 8 is <strong>Created Date</strong> and should be automatically filled with the current date and time</li>
+                                    <li class="text">Column 9 should contain <strong>Addresses</strong></li>
+                                    <li class="text">Column 10 should contain <strong>Cities</strong></li>
+                                    <li class="text">Column 11 should contain <strong>States</strong></li>
+                                    <li class="text">Column 12 should contain <strong>Zip Codes</strong></li>
+                                    <li class="text">Column 13 should contain <strong>Countries</strong></li>
+                                    <li class="text">Column 14 should contain <strong>Notes</strong></li>
+                                    <li class="text">Column 15 should contain <strong>Industries</strong></li>
+                                    <li class="text">Column 16 should contain <strong>Lead Sources</strong></li>
+                                    <li class="text">Column 17 should contain <strong>Lead Source Details</strong></li>
+                                    <li class="text">Column 18 should contain <strong>Brand Id</strong></li>
+                                    <li class="text">Column 19 should contain <strong>Product Type Id</strong></li>
+                                    <li class="text">Column 20 should contain <strong>Product Id</strong></li>
+                                    <li class="text">Column 21 should contain <strong>Referral Id</strong></li>
+                                    <li class="text">Column 22 should contain <strong>Selected Interested Tags</strong></li>
+                                    <!-- Add other columns as needed -->
+                                </ul>
+                                <p>Ensure that your file has the required columns are <strong>1 to 14 </strong> and data in the specified order.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </main>
+
+        </div>
+    </article>
+</div>
+@* <div style="margin-bottom: 167px;">
+    <article style="width: 100%!important;">
+    <main id="main">
+
+        <div class="container mt-4">
+            <h2>Bulk Upload Leads</h2>
+
+            <form asp-action="BulkUploadLeads" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="file">Select Excel File:</label>
+                    <input type="file" name="file" id="file" class="form-control" />
+                    @if (ViewBag.FileError != null)
+                    {
+                        <span class="text-danger">@ViewBag.FileError</span>
+                    }
+                </div>
+
+                <button type="submit" class="btn btn-primary">Upload</button>
+            </form>
+        </div>
+
+        <div class="modal fade" id="viewSampleModal" tabindex="-1" role="dialog" aria-labelledby="viewSampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="viewSampleModalLabel">Sample Image</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="/img/Screenshot 2024-01-19 122227.png" style="width:100%;" />
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <br />
+        <button type="button" class="btn btn-info" id="showInstructionsBtn">Show Instructions</button>
+        <button type="button" class="btn btn-success" id="viewSampleBtn">View Sample</button>
+        <div class="modal fade" id="instructionsModal" tabindex="-1" role="dialog" aria-labelledby="instructionsModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="instructionsModalLabel">Instructions</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>When uploading your file, make sure it follows this structure:</p>
+                        <ul>
+                            <li class="text">Column 1 should contain <strong>First Names</strong></li>
+                            <li class="text">Column 2 should contain <strong>Last Names</strong></li>
+                            <li class="text">Column 3 should contain <strong>Emails</strong></li>
+                            <li class="text">Column 4 should contain <strong>Genders</strong></li>
+                            <li class="text">Column 5 should contain <strong>Company Names</strong></li>
+                            <li class="text">Column 6 should contain <strong>Job Titles</strong></li>
+                            <li class="text">Column 7 should contain <strong>Phone Numbers</strong></li>
+                            <li class="text">Column 8 is <strong>Created Date</strong> and should be automatically filled with the current date and time</li>
+                            <li class="text">Column 9 should contain <strong>Addresses</strong></li>
+                            <li class="text">Column 10 should contain <strong>Cities</strong></li>
+                            <li class="text">Column 11 should contain <strong>States</strong></li>
+                            <li class="text">Column 12 should contain <strong>Zip Codes</strong></li>
+                            <li class="text">Column 13 should contain <strong>Countries</strong></li>
+                            <li class="text">Column 14 should contain <strong>Notes</strong></li>
+                            <li class="text">Column 15 should contain <strong>Industries</strong></li>
+                            <li class="text">Column 16 should contain <strong>Lead Sources</strong></li>
+                            <li class="text">Column 17 should contain <strong>Lead Source Details</strong></li>
+                            <li class="text">Column 18 should contain <strong>Brand Id</strong></li>
+                            <li class="text">Column 19 should contain <strong>Product Type Id</strong></li>
+                            <li class="text">Column 20 should contain <strong>Product Id</strong></li>
+                            <li class="text">Column 21 should contain <strong>Referral Id</strong></li>
+                            <li class="text">Column 22 should contain <strong>Selected Interested Tags</strong></li>
+                            <!-- Add other columns as needed -->
+                        </ul>
+                        <p>Ensure that your file has the required columns are <strong>1 to 14 </strong> and data in the specified order.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+</article>
+</div> *@
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Get the button and the modal for instructions
+        var showInstructionsBtn = document.getElementById("showInstructionsBtn");
+        var instructionsModal = new bootstrap.Modal(document.getElementById("instructionsModal"));
+
+        // Add a click event listener to show the instructions modal
+        showInstructionsBtn.addEventListener("click", function () {
+            instructionsModal.show();
+        });
+
+        // Get the button and the modal for view sample
+        var viewSampleBtn = document.getElementById("viewSampleBtn");
+        var viewSampleModal = new bootstrap.Modal(document.getElementById("viewSampleModal"));
+
+        // Add a click event listener to show the view sample modal
+        viewSampleBtn.addEventListener("click", function () {
+            viewSampleModal.show();
+        });
+    });
+</script>
+</main>

@@ -1,0 +1,47 @@
+﻿@model List<Notificationscs>
+
+@{
+    ViewData["Title"] = "All Notifications";
+}
+<main id="main">
+<h2>All Notifications</h2>
+
+@if (Model != null && Model.Any())
+{
+    <ul class="notification-list">
+        @foreach (var notificationscs in Model)
+        {
+            <li class="notification-item">
+                <span class="notification-content">@notificationscs.Message</span>
+                <span class="notification-timestamp">@notificationscs.Timestamp.ToString("yyyy-MM-dd HH:mm:ss")</span>
+            </li>
+        }
+    </ul>
+}
+else
+{
+    <p>No notifications found.</p>
+}
+</main>
+<style>
+    .notification-list {
+        list-style: none;
+        padding: 0;
+    }
+
+    .notification-item {
+        border: 1px solid #ddd;
+        margin-bottom: 10px;
+        padding: 10px;
+        background-color: #f9f9f9;
+    }
+
+    .notification-content {
+        font-weight: bold;
+    }
+
+    .notification-timestamp {
+        color: #777;
+        font-size: 12px;
+    }
+</style>

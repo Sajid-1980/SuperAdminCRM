@@ -1,0 +1,217 @@
+﻿@{
+    ViewData["Title"] = "Invoices";
+}
+<style>
+    th {
+        background-color: rgb(27, 40, 80) !important;
+        color: white !important;
+    }
+</style>
+
+<div class="page-wrapper">
+    <div class="content">
+        <div class="row">
+            <main id="main">
+                <table id="invoiceTable" class="display">
+                    <thead>
+                        <tr>
+                            <th>invoice id</th>
+                            <th>user id</th>
+                            <th>status</th>
+                            <th>actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var invoice in Model)
+                        {
+                            <tr>
+                                <td>@invoice.InvoiceId</td>
+                                <td>@invoice.UserId</td>
+                                <td>@(invoice.Status != null ? invoice.Status : "Pending")</td>
+                                <td>
+                                    <button class="viewImageBtn" data-image="@Convert.ToBase64String(invoice.ImageData)">View Image</button>
+                                    @if (invoice.Status != null && invoice.Status.ToLower() == "approved")
+                                    {
+                                        <button class="approval btn btn-warning" disabled>Approval</button>
+                                    }
+                                    else
+                                    {
+                                        <button class="approval btn btn-warning">Approval</button>
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
+                <div id="imageModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <img id="invoiceImage" src="" alt="Invoice Image">
+                    </div>
+                </div>
+                <div id="approvalModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <h2>Approval</h2>
+                        <form id="purchaseBalanceForm">
+                            <div class="form-group">
+                                <label for="userId">User ID:</label>
+                                <input type="text" id="userId" name="userId" class="form-control" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="Id">Order ID:</label>
+                                <input type="text" id="Id" name="Id" class="form-control" readonly>
+                            </div>
+                            <div class="form-group">
+                                <label for="approvalComment">Amount:</label>
+                                <input type="text" id="Amount" name="Amount" class="form-control">
+                            </div>
+                            <button type="submit" id="submitApproval" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+                </div>
+
+                <style>
+                    /* DataTable styles */
+                    #invoiceTable {
+                        width: 100%;
+                        border-collapse: collapse;
+                        border-spacing: 0;
+                    }
+
+                        #invoiceTable th,
+                        #invoiceTable td {
+                            padding: 8px;
+                            border-bottom: 1px solid #ddd;
+                        }
+
+                        #invoiceTable th {
+                            background-color: #f2f2f2;
+                            text-align: left;
+                        }
+
+                    /* Button styles */
+                    .viewImageBtn {
+                        background-color: #4CAF50;
+                        color: white;
+                        padding: 10px 20px;
+                        border: none;
+                        cursor: pointer;
+                        border-radius: 5px;
+                        transition: background-color 0.3s;
+                    }
+
+                        .viewImageBtn:hover {
+                            background-color: #45a049;
+                        }
+
+                    /* Modal styles */
+                    .modal {
+                        display: none;
+                        position: fixed;
+                        z-index: 1;
+                        left: 0;
+                        top: 0;
+                        width: 100%;
+                        height: 100%;
+                        overflow: auto;
+                        background-color: rgba(0, 0, 0, 0.4);
+                    }
+
+                    .modal-content {
+                        background-color: #fefefe;
+                        margin: 10% auto;
+                        padding: 20px;
+                        border: 1px solid #888;
+                        width: 80%;
+                        max-width: 600px;
+                        border-radius: 5px;
+                        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+                    }
+
+                    .close {
+                        color: #aaa;
+                        float: right;
+                        font-size: 28px;
+                        font-weight: bold;
+                    }
+
+                        .close:hover,
+                        .close:focus {
+                            color: black;
+                            text-decoration: none;
+                            cursor: pointer;
+                        }
+
+                    #invoiceImage {
+                        width: 100%;
+                        height: auto;
+                    }
+                </style>
+
+
+                @section Scripts {
+                    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+                    <script>
+                        $(document).ready(function () {
+                            $('#invoiceTable').DataTable();
+
+                            // Show approval modal when any "Approval" button is clicked
+                            $('#invoiceTable').on('click', 'button.approval', function () {
+                                // Get the user ID from the same row
+                                var userId = $(this).closest('tr').find('td:eq(1)').text();
+                                var Id = $(this).closest('tr').find('td:eq(0)').text();
+                                $('#Id').val(Id); // Populate the user ID in the modal
+
+                                $('#userId').val(userId); // Populate the user ID in the modal
+                                $('#approvalModal').css('display', 'block'); // Display the approval modal
+                            });
+
+                            // Show image modal when any "View Image" button is clicked
+                            $('#invoiceTable').on('click', 'button.viewImageBtn', function () {
+                                var imageData = $(this).data('image');
+                                $('#invoiceImage').attr('src', 'data:image/jpeg;base64,' + imageData);
+                                $('#imageModal').css('display', 'block');
+                            });
+
+                            // Close the modal when the close button is clicked
+                            $('.close').on('click', function () {
+                                $('.modal').css('display', 'none');
+                            });
+                            // Handle form submission
+                            $('#purchaseBalanceForm').submit(function (event) {
+                                event.preventDefault(); // Prevent the default form submission
+
+                                // Serialize form data
+                                var formData = $(this).serialize();
+
+                                // Send AJAX request
+                                $.ajax({
+                                    url: '/Invoice/PurchaseBalance', // Replace 'YourController' with your actual controller name
+                                    type: 'POST',
+                                    data: formData,
+                                    success: function (response) {
+                                        // Handle success response
+                                        if (response.success) {
+                                            alert(response.message); // Show success message
+                                            // Optionally, you can update the UI here
+                                        } else {
+                                            alert(response.message); // Show error message
+                                        }
+                                    },
+                                    error: function () {
+                                        // Handle error
+                                        alert('Error occurred while processing the request.');
+                                    }
+                                });
+                            });
+                        });
+                    </script>
+                }
+            </main>
+        </div>
+    </div>
+</div>
+

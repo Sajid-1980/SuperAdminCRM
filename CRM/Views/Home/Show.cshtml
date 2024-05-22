@@ -1,0 +1,158 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<style>
+    th {
+        background-color: rgb(27, 40, 80) !important;
+        color: white !important;
+    }
+</style>
+@model IEnumerable<SuperAdmin.Models.SmsBalancecs>
+
+<div class="page-wrapper">
+    <div class="content">
+        <div class="row">
+            <main id="main">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>User ID</th>
+                            <th>Price</th>
+                            <th>End Date</th>
+                            <th>Order Date</th>
+                            <th>Active</th>
+                            <th>SMS</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.SmsBalancecsId</td>
+                                <td>@item.Price</td>
+                                <td>@item.EndDate</td>
+                                <td>@item.OrderDate</td>
+                                <td>@item.IsActive</td>
+                                <td>@item.Sms</td>
+                                <td>
+                                    <button class="btn btn-primary" onclick="openEditModal(@item.SmsBalancecsId)">Edit</button>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table><div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="editModalLabel">Edit SMS Balance</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form id="editForm" action="/Home/Update" method="post">
+                                    <input type="hidden" id="editId" name="SmsBalancecsId" />
+                                    <div class="form-group">
+                                        <label for="editUserId">User ID</label>
+                                        <input type="text" class="form-control" id="UserId" name="UserId" readonly />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="Price">Price</label>
+                                        <input type="number" class="form-control" id="Price" name="Price" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="EndDate">End Date</label>
+                                        <input type="date" class="form-control" id="EndDate" name="EndDate" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="IsActive">Active</label>
+                                        <select class="form-control" id="IsActive" name="IsActive">
+                                            <option value="true">True</option>
+                                            <option value="false">False</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="Sms">SMS</label>
+                                        <input type="number" class="form-control" id="Sms" name="Sms" />
+                                    </div>
+                                    <br />
+                                    <button type="submit" class="btn btn-primary">Save changes</button>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <script>
+                    $(document).ready(function () {
+                        $('#editForm').submit(function (event) {
+                            event.preventDefault(); // Prevent default form submission
+
+                            // Perform AJAX submission
+                            $.ajax({
+                                url: $(this).attr('action'),
+                                type: $(this).attr('method'),
+                                data: $(this).serialize(), // Serialize form data
+                                success: function (response) {
+                                    // Handle success response
+                                    console.log("Form submitted successfully.");
+                                    $('#editModal').modal('hide'); // Hide modal after successful submission
+                                },
+                                error: function (xhr, status, error) {
+                                    // Handle error response
+                                    console.error("Error submitting form:", error);
+                                }
+                            });
+                        });
+                    });
+                    function openEditModal(id) {
+                        // Fetch the row data using AJAX and populate the form fields
+                        // For simplicity, you can use jQuery's AJAX method
+                        $.ajax({
+                            url: '/Home/GetDetails/' + id,
+                            type: 'GET',
+                            success: function (data) {
+                                console.log("Received data:", data); // Log the received data
+
+                                // Assign values to input fields
+                                $('#editId').val(data.smsBalancecsId);
+                                $('#UserId').val(data.userId);
+                                $('#Price').val(data.price);
+                                $('#EndDate').val(data.endDate.substring(0, 10)); // Extract date part only
+                                $('#IsActive').val(data.isActive.toString()); // Set dropdown value
+                                $('#Sms').val(data.sms);
+
+                                // Log the values assigned to input fields
+                                console.log("editId:", $('#editId').val());
+                                console.log("UserId:", $('#UserId').val());
+                                console.log("Price:", $('#Price').val());
+                                console.log("EndDate:", $('#EndDate').val());
+                                console.log("IsActive:", $('#IsActive').val());
+                                console.log("Sms:", $('#Sms').val());
+
+                                // Show the modal
+                                $('#editModal').modal('show');
+                            },
+                            error: function (xhr, status, error) {
+                                console.error("Error fetching data:", error);
+                            }
+                        });
+                    }
+
+
+
+
+                </script>
+
+            </main>
+        </div>
+    </div>
+</div>

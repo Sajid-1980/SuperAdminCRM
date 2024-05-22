@@ -1,0 +1,138 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<style>
+    th {
+        background-color: rgb(27, 40, 80) !important;
+        color: white !important;
+    }
+</style>
+<!-- Index.cshtml -->
+@model List<SuperAdmin.Models.Subscription>
+<div class="page-wrapper">
+    <div class="content">
+        <div class="row">
+            <main id="main">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Subscription ID</th>
+                            <th>User ID</th>
+
+                            <th>Price</th>
+                            <th>IS Active</th>
+                            <th>Duration in hours</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var subscription in Model)
+                        {
+                            <tr>
+                                <td>@subscription.SubscriptionId</td>
+                                <td>@subscription.UserId</td>
+
+                                <td>@subscription.Price</td>
+                                <td>@subscription.IsActive</td>
+                                <td>@subscription.Duration</td>
+                                <td>
+                                    <button class="btn btn-danger" onclick="dismissSubscription('@subscription.SubscriptionId')">Dismiss</button>
+                                    <button class="btn btn-primary" onclick="showApprovalModal('@subscription.SubscriptionId')">Approve</button>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
+                <!-- Modal for Approval -->
+                <!-- Update the modal form in Index.cshtml -->
+                <div class="modal" id="approvalModal" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Subscription Approval</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form id="approvalForm">
+                                    <label>Start Date: <input type="datetime-local" id="startDate" name="startDate" required /></label>
+                                    <br />
+                                    <label for="endDate">End Date:</label>
+                                    <input type="date" id="endDate" name="endDate" required />
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary" onclick="submitApprovalForm()">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <script>
+        function dismissSubscription(subscriptionId) {
+            if (confirm('Are you sure you want to dismiss this subscription?')) {
+                $.ajax({
+                    url: '@Url.Action("DismissSubscription", "Home")',
+                    type: 'POST',
+                    data: { subscriptionId: subscriptionId },
+                    success: function (data) {
+                        if (data.success) {
+                            // Optionally, you can reload the table or perform other actions
+                        } else {
+                            alert('Failed to dismiss subscription.');
+                        }
+                    },
+                    error: function () {
+                        alert('An error occurred while dismissing subscription.');
+                    }
+                });
+            }
+        }
+        function showApprovalModal(subscriptionId) {
+            // You may fetch additional data here based on subscriptionId if needed
+            $('#startDate').data('subscriptionid', subscriptionId); // Set subscriptionId as a data attribute
+            $('#startDate').val(new Date().toISOString().slice(0, 16));
+            $('#endDate').val(''); // Clear endDate input
+            $('#approvalModal').modal('show');
+        }
+
+        function submitApprovalForm() {
+            var subscriptionId = $('#startDate').data('subscriptionid');
+            var startDate = $('#startDate').val();
+            var endDate = $('#endDate').val();
+
+            $.ajax({
+                url: '@Url.Action("UpdateSubscription", "Home")',
+                type: 'POST',
+                data: {
+                    subscriptionId: subscriptionId,
+                    startDate: startDate,
+                    endDate: endDate
+                },
+                success: function (data) {
+                    if (data.success) {
+                        // Optionally, you can reload the table or perform other actions
+                        location.reload();// Reload the page
+                        $('#approvalModal').modal('hide');
+                    } else {
+                        alert('Failed to update subscription.');
+                    }
+                },
+                error: function () {
+                    alert('An error occurred while updating subscription.');
+                }
+            });
+        }
+    </script>
+}

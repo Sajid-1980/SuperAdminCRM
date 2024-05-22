@@ -1,0 +1,170 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mask Orders</title>
+    <!-- Bootstrap CSS -->
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- DataTables CSS -->
+    <link href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" rel="stylesheet">
+    <!-- DataTables JS -->
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <style>
+        th {
+            background-color: rgb(27, 40, 80) !important;
+            color: white !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+        <div class="content">
+            <div class="row">
+                <main id="main" class="card">
+                  
+                    <div class="container mt-4" style="border: 2px solid;border-radius: 18px;color: #1b2850;">
+                        <h3 style="width: 185px;text-align: center;border-radius: 14px;color: #f2f0f4;background-color: #1b2850;margin-top: -18px;margin-left: 16px;">Masks Orders</h3>
+                      <br />
+                    @model List<MaskOrder>
+                    <div class="table-responsive">
+                    <table id="ordersTable" class="display" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                    <th style="display:none;">User ID</th>
+                                <th>Option One</th>
+                                <th>Option Two</th>
+                                <th>Option Three</th>
+                                <th>Approved Option</th>
+                                <th>Order Date</th>
+                                 <th style="display:none;">MaskID</th>
+                                    <th style="display:none;">SMSuserName</th>
+                                    <th style="display:none;">SMSPassword</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var order in Model)
+                            {
+                                <tr>
+                                    <td>@order.MaskOrderId</td>
+                                        <td style="display:none;">@order.UserId</td>
+                                    <td>@order.Optionone</td>
+                                    <td>@order.Optiontwo</td>
+                                    <td>@order.Optionthree</td>
+                                    <td>@order.Approvedoption</td>
+                                    <td>@order.OrderDate.ToShortDateString()</td>
+                                        <td style="display:none !important;">@order.SmsMaskId</td>
+                                        <td style="display:none;">@order.SmsUser</td>
+                                        <td style="display:none;">@order.SmsPassword</td>
+
+                                        <td>
+
+                                            <button class="approveBtn btn btn-warning" data-order-id="2" style="background-color: #43ce81 !important;border-color: #28c76f !important;color: #fbf7f7;">
+                                                <i class="fas fa-check-circle"></i> Submit
+                                            </button>
+                                        </td>
+
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                    </div>
+                    <div class="modal" id="myModal">
+                        <form id="approveForm" method="post" asp-action="UpdateApprovedOption" asp-controller="Home">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">Edit Approved Option</h4>
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    </div>
+
+                                    <div class="modal-body">
+                                        <div class="mb-3">
+                                            <label for="orderIdInput" class="form-label">Order ID:</label>
+                                            <input type="text" id="orderIdInput" name="orderId" class="form-control" readonly>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="approvedOptionInput" class="form-label">Approved Option:</label>
+                                            <input type="text" id="approvedOptionInput" name="approvedOption" class="form-control" placeholder="Enter Approved Option">
+                                        </div>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="mb-3">
+                                            <label for="maskIdInput" class="form-label">Mask ID:</label>
+                                            <input type="text" id="maskIdInput" name="maskId" class="form-control">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="smsUserInput" class="form-label">SMS User Name:</label>
+                                            <input type="text" id="smsUserInput" name="smsUser" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="mb-3">
+                                            <label for="smsPasswordInput" class="form-label">SMS Password:</label>
+                                            <input type="text" id="smsPasswordInput" name="smsPassword" class="form-control">
+                                        </div>
+                                       
+                                    </div>
+                                 
+                               
+                                    <div class="modal-footer">
+                                        <button type="submit" class="btn btn-primary">Save</button>
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Add inputs for MaskID, SMSUserName, and SMSPassword in the modal form -->
+
+
+                        </form>
+                    </div>
+</div>
+                </main>
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Function to save approved option
+        function saveApprovedOption() {
+            var orderId = $('#saveApprovedOptionBtn').data('order-id');
+            var approvedOption = $('#approvedOptionInput').val();
+            $.ajax({
+                url: '@Url.Action("UpdateApprovedOption", "Home")',
+                type: 'POST',
+                data: { orderId: orderId, approvedOption: approvedOption },
+                success: function () {
+                    $('#myModal').modal('hide');
+                    location.reload(); // Refresh the page to reflect changes
+                },
+                error: function () {
+                    alert('Error occurred while saving approved option.');
+                }
+            });
+        }
+
+        $(document).ready(function () {
+            $('#ordersTable').DataTable();
+
+            $('.approveBtn').click(function () {
+                var orderId = $(this).data('order-id');
+                var approvedOption = $(this).closest('tr').find('td:eq(5)').text();
+                $('#orderIdInput').val(orderId); // Set the Order ID input field
+                $('#approvedOptionInput').val(approvedOption);
+                $('#myModal').modal('show');
+            });
+
+            // Function to save approved option
+               });
+
+    </script>
+</body>
+</html>

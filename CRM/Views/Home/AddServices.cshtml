@@ -1,0 +1,92 @@
+﻿@model SuperAdmin.Models.ServiceModel
+
+@{
+    ViewData["Title"] = "Add Services";
+}
+<div class="page-wrapper">
+    <div class="content">
+        <div class="row">
+            <main id="main" class="card" style="width: 71%;margin-left: 113px;">
+                <div class="container mt-4" style="border: 2px solid;border-radius: 18px;color: #1b2850;">
+                    <h3 style="width: 210px;text-align: center;border-radius: 14px;color: #f2f0f4;background-color: #1b2850;margin-top: -18px;margin-left: 16px;">Add Services</h3>
+                  <br />
+
+                <form method="post" asp-action="SaveService" style="margin-left: 54px;">
+                    <div class="row">
+                        <div class="col-md-10">
+                            <div class="form-group">
+                                <label for="ServiceName">Service Name:</label>
+                                <select class="form-control" id="ServiceName" name="ServiceName" required>
+                                    <option value="YouTube">YouTube</option>
+                                    <option value="Facebook">Facebook</option>
+                                    <option value="TikTok">TikTok</option>
+                                    <option value="Instagram">Instagram</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                        <div class="row">
+                            <div class="col-md-10">
+                                <div class="form-group">
+                                    <label for="Description">Description:</label>
+                                    <input type="text" class="form-control" id="Description" name="Description" placeholder="Enter description" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-10">
+                                <div class="form-group">
+                                    <label for="Quantity">Quantity:</label>
+                                    <input type="number" class="form-control" id="Quantity" name="Quantity" placeholder="Enter quantity" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-10">
+                                <div class="form-group">
+                                    <label for="Price">Price:</label>
+                                    <input type="number" class="form-control" id="Price" name="Price" placeholder="Enter price" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-10">
+                                <div class="form-group">
+                                    <label for="PricePerUnit">Price Per Unit:</label>
+                                    <input type="number" step="0.01" class="form-control" id="PricePerUnit" name="PricePerUnit" placeholder="Price per unit" readonly required>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    <button type="submit" class="btn btn-primary">Save Service</button> 
+            
+                </form>
+                    <br />
+                </div>
+                <br />
+                <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                        var quantityInput = document.getElementById('Quantity');
+                        var priceInput = document.getElementById('Price');
+                        var unitPriceInput = document.getElementById('PricePerUnit');
+
+                        quantityInput.addEventListener('input', calculateUnitPrice);
+                        priceInput.addEventListener('input', calculateUnitPrice);
+
+                        function calculateUnitPrice() {
+                            var quantity = parseFloat(quantityInput.value) || 0;
+                            var price = parseFloat(priceInput.value) || 0;
+                            var unitPrice = quantity > 0 ? (price / quantity).toFixed(2) : 0;
+
+                            unitPriceInput.value = unitPrice;
+                        }
+                    });
+                </script>
+            </main>
+            <br />
+        </div>
+    </div>
+</div>
+

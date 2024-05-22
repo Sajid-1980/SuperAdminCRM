@@ -1,0 +1,58 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<main id="main">
+    @model List<Register>
+
+    @{
+        ViewData["Title"] = "Client List";
+    }
+
+    <h2>@ViewData["Title"]</h2>
+
+    <table id="clientTable" class="display">
+        <thead>
+            <tr>
+                <th style="background-color: #8ccbfa!important;">Client ID</th>
+                <th style="background-color: #8ccbfa!important;">First Name</th>
+                <th style="background-color: #8ccbfa!important;">Last Name</th>
+                <th style="background-color: #8ccbfa!important;">Company</th>
+                <th style="background-color: #8ccbfa!important;">Phone 1</th>
+                <th style="background-color: #8ccbfa!important;">Phone 2</th>
+                <th style="background-color: #8ccbfa!important;">Email</th>
+                <th style="background-color: #8ccbfa!important;">Password</th>
+          
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var client in Model)
+            {
+                <tr>
+                    <td>@client.ClientId</td>
+                    <td>@client.FirstName</td>
+                    <td>@client.LastName</td>
+                    <td>@client.Company</td>
+                    <td>@client.Phone1</td>
+                    <td>@client.Phone2</td>
+                    <td>@client.Email</td>
+                    <td>@client.Password</td>
+                  
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    @section scripts {
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('#clientTable').DataTable();
+            });
+        </script>
+    }
+
+</main>

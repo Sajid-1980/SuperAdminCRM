@@ -1,0 +1,231 @@
+﻿@model List<Register>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-J1GQgWFvKwgHd4U/GyPmzIiDZhUxNfYjNv9WFeq3/ftrdTzvL4/bZT7GPs0+eqKt9eeNwfT17LRW25m5HhzSgg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+<style>
+    th {
+        background-color: rgb(27, 40, 80) !important;
+        color: white !important;
+    }
+</style>
+<div class="page-wrapper">
+    <div class="content">
+        <div class="row">
+            <main id="main" class="card">
+                @{
+                    ViewData["Title"] = "Client List";
+                }
+                <div class="container mt-4" style="border: 2px solid;border-radius: 18px;color: #1b2850;">
+                    <h3 style="width: 144px;text-align: center;border-radius: 14px;color: #f2f0f4;background-color: #1b2850;margin-top: -18px;margin-left: 16px;">@ViewData["Title"]</h3>
+                 <br />
+                <div class="table-responsive">
+                <table id="clientTable" class="table table-bordered table-hover dt-responsive">
+                    <thead>
+                                <tr style="text-align: center;">
+
+                                <th>Full Name</th>
+                            <th>Company</th>
+                            <th>Phone 1</th>
+                            
+                            <th>Email</th>
+                         
+                         
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var client in Model)
+                        {
+                                    <tr style="text-align: center;">
+
+
+                                    <td>@($"{client.FirstName} {client.LastName}")</td>
+                                <td>@client.Company</td>
+                                <td>@client.Phone1</td>
+                               
+                                <td>@client.Email</td>
+                              
+
+                                    <td>
+                                        <button class="btn btn-danger" onclick="suspendClient('@client.UserClientId')">
+                                            <i class="fas fa-ban"></i> 
+                                        </button>
+                                        <button class="btn btn-primary" onclick="editClient('@client.UserClientId')">
+                                            <i class="fas fa-edit"></i> 
+                                        </button>
+                                    </td>
+
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                </div>
+                <!-- Edit Modal -->
+                <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="editModalLabel">Edit Client</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form id="editForm">
+                                    <input type="hidden" id="editClientId" name="editClientId" />
+
+                                    <div class="form-group">
+                                        <label for="editFirstName">First Name:</label>
+                                        <input type="text" id="editFirstName" name="editFirstName" class="form-control" />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="editLastName">Last Name:</label>
+                                        <input type="text" id="editLastName" name="editLastName" class="form-control" />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="editCompany">Company:</label>
+                                        <input type="text" id="editCompany" name="editCompany" class="form-control" />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="editPhone1">Phone 1:</label>
+                                        <input type="text" id="editPhone1" name="editPhone1" class="form-control" />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="editPhone2">Phone 2:</label>
+                                        <input type="text" id="editPhone2" name="editPhone2" class="form-control" />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="editEmail">Email:</label>
+                                        <input type="text" id="editEmail" name="editEmail" class="form-control" />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="editPassword">Password:</label>
+                                        <input type="password" id="editPassword" name="editPassword" class="form-control" />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="editSmsMaskId">SMS Mask ID:</label>
+                                        <input type="text" id="editSmsMaskId" name="editSmsMaskId" class="form-control" />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="editSmsUser">SMS User:</label>
+                                        <input type="text" id="editSmsUser" name="editSmsUser" class="form-control" />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="editSmsPassword">SMS Password:</label>
+                                        <input type="password" id="editSmsPassword" name="editSmsPassword" class="form-control" />
+                                    </div>
+
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary" onclick="saveEdit()">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                @section scripts {
+                    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
+                    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+                    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+                    <script>
+                        function suspendClient(clientId) {
+                            console.log('suspend btn click');
+                            // Implement suspend logic using AJAX
+                            $.ajax({
+                                type: 'POST',
+                                url: '@Url.Action("Suspend", "Home")',
+                                data: { clientId: clientId },
+                                success: function (result) {
+                                    console.log('Client suspended successfully');
+                                    // Refresh the DataTable or update the row accordingly
+                                },
+                                error: function (error) {
+                                    console.error('Error suspending client:', error);
+                                }
+                            });
+                        }
+                        $(document).ready(function () {
+                            $('#clientTable').DataTable();
+
+                        });
+
+
+
+                        function editClient(clientId) {
+                            // Implement logic to fetch client details and populate the modal
+                            $.ajax({
+                                type: 'GET',
+                                url: '@Url.Action("GetClientDetails", "Home")',
+
+                                data: { clientId: clientId },
+                                success: function (result) {
+                                    // Populate the modal with client details
+                                    $('#editClientId').val(result.clientId);
+                                    $('#editFirstName').val(result.firstName);
+                                    $('#editLastName').val(result.lastName);
+                                    $('#editCompany').val(result.company);
+                                    $('#editPhone1').val(result.phone1);
+                                    $('#editPhone2').val(result.phone2);
+                                    $('#editEmail').val(result.email);
+                                    $('#editPassword').val(result.password);
+
+
+                                    $('#editModal').modal('show');
+                                },
+                                error: function (error) {
+                                    console.error('Error fetching client details:', error);
+                                }
+                            });
+                        }
+
+                        function saveEdit() {
+                            console.log('save btn click');
+                            // Implement logic to save edited client details
+                            var editedData = {
+                                clientId: $('#editClientId').val(),
+                                firstName: $('#editFirstName').val(),
+                                lastName: $('#editLastName').val(),
+                                company: $('#editCompany').val(),
+                                phone1: $('#editPhone1').val(),
+                                phone2: $('#editPhone2').val(),
+                                email: $('#editEmail').val(),
+                                password: $('#editPassword').val(),
+                                smsMaskId: $('#editSmsMaskId').val(),
+                                smsUser: $('#editSmsUser').val(),
+                                smsPassword: $('#editSmsPassword').val()
+                            };
+
+                            $.ajax({
+                                type: 'POST',
+                                url: '@Url.Action("SaveClientDetails", "Home")',
+                                data: JSON.stringify(editedData),
+                                contentType: 'application/json',
+                                success: function (result) {
+                                    console.log('Client details saved successfully');
+                                    // Refresh the DataTable or update the row accordingly
+                                    $('#editModal').modal('hide');
+                                },
+                                error: function (error) {
+                                    console.error('Error saving client details:', error);
+                                }
+                            });
+                        }
+                    </script>
+                }
+
+            </main>
+        </div>
+    </div>
+</div>
+

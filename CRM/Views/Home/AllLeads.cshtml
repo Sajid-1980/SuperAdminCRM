@@ -1,0 +1,83 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model List<SuperAdmin.Models.Masterleads.Masterleads>
+
+@{
+    ViewData["Title"] = "All Leads";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<head>
+    <!-- Add these CDN links in the head section of your HTML file -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.25/datatables.min.css" />
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.25/datatables.min.js"></script>
+    <style>
+        th {
+            background-color: rgb(27, 40, 80) !important;
+            color: white !important;
+        }
+    </style>
+    </head>
+<div class="page-wrapper">
+    <div class="content">
+        <div class="row">
+            <main id="main" class="card">
+                <div class="container mt-4" style="border: 2px solid;border-radius: 18px;color: #1b2850;">
+                    <h3 style="width: 144px;text-align: center;border-radius: 14px;color: #f2f0f4;background-color: #1b2850;margin-top: -18px;margin-left: 16px;">All Leads</h3>
+                    <div>
+                    <div class="table-responsive " >
+                        <table id="leadsTable" class="table">
+                            <thead>
+                                    <tr style="text-align: center;">
+
+                                    <th>Full Name</th>
+                                    <th >Phone Number</th>
+                                    <th >Gender</th>
+                                    <th >profession</th>
+
+                                    <th >Email</th>
+
+                                  @*   <th >Address</th> *@
+                                    <th >City</th>
+                                  @*   <th >Area</th> *@
+                                    <!-- Add other columns based on your Masterleads model properties -->
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var lead in Model)
+                                {
+                                    <tr>
+
+                                        <td>@($"{lead.FirstName} {lead.LastName}")</td>
+                                        <td>@lead.PhoneNumber</td>
+                                        <td>@lead.Gender</td>
+                                        <td>@lead.profession</td>
+                                        <td>@lead.Email</td>
+                                    @*     <td>@lead.Address</td> *@
+                                        <td>@lead.City</td>
+                                   @*      <td>@lead.Area</td> *@
+
+                                        <!-- Add other columns based on your Masterleads model properties -->
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                    </div>
+                </div>
+                <br />
+            </main>
+        </div>
+    </div>
+</div>
+<br />
+<script>
+    $(document).ready(function () {
+        $('#leadsTable').DataTable(); // Initialize DataTables
+        responsive: true;
+        scrollX: true
+    });
+</script>

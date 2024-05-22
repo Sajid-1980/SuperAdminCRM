@@ -1,0 +1,263 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<style>
+    th {
+        background-color: rgb(27, 40, 80) !important;
+        color: white !important;
+    }
+</style>
+
+@model List<Order>
+@using SuperAdmin.Models;
+<div class="page-wrapper">
+    <div class="content">
+        <div class="row">
+            <main id="main" class="card">
+                <div class="container mt-4" style="border: 2px solid;border-radius: 18px;color: #1b2850;">
+                    <h3 style="width: 190px;text-align: center;border-radius: 14px;color: #f2f0f4;background-color: #1b2850;margin-top: -18px;margin-left: 16px;">Clients Orders</h3>
+                    <br />
+                
+                <div class="table-responsive">
+                <table id="ordersTable" class="table table-bordered table-hover dt-responsive">
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                          @*   <th>User ID</th> *@
+                            <th>Service</th>
+                          @*   <th>Description</th> *@
+                            <th>Quantity</th>
+                            <th>Price</th>
+                     @*        <th>Average Time</th> *@
+                            <th>Link</th>
+                            <th>Order Status</th>
+                     @*        <th>Client Message</th> *@
+                            <th>Action</th>
+                            <th>Submit Order</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                            @foreach (var order in Model)
+                            {
+                                @if (order.OrderStatus == "Pending")
+                                {
+                                    <tr>
+                                        <td>@order.OrderId</td>
+                                      @*   <td>@order.userId</td> *@
+                                        <td>@order.Service</td>
+                                       @*  <td>@order.Description</td> *@
+                                        <td>@order.Quantity</td>
+                                        <td>@order.Price</td>
+                                     @*    <td>@order.AverageTime</td> *@
+                                        <td>@order.Link</td>
+                                        <td>@order.OrderStatus</td>
+                                     @*    <td>@order.Message</td> *@
+                                        <td>
+                                            <button class="btn btn-warning approve-btn" data-order-id="@order.OrderId" style="color: #f9f1f1;
+  background-color: #b72020;
+  border-color: #db5f5f;">
+                                                <i class="fas fa-times-circle"></i> Cancel
+                                            </button>
+                                        </td>
+                                        <td>
+                                         
+                                            <button class="btn btn-success submit-order-btn"
+                                                    data-order-id="@order.OrderId"
+                                                    data-user-id="@order.userId"
+                                                    data-service="@order.Service"
+                                                    data-quantity="@order.Quantity"
+                                                    data-vendor-name=""
+                                                    data-vendor-order-id=""
+                                                    data-expected-time=""
+                                                    data-previous-quantity="" style="background-color: #43ce81 !important;border-color: #28c76f !important;color: #fbf7f7;">
+                                                <i class="fas fa-check-circle"></i> Submit
+                                            </button>
+                                        </td>
+
+                                    </tr>
+                                }
+                            }
+
+                    </tbody>
+                </table>
+                </div>
+                <div class="modal" id="submitOrderModal" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Submit Order</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form id="submitOrderForm" method="post" action="@Url.Action("SubmitOrder", "Home")">
+                                    @Html.AntiForgeryToken()
+
+                                    <div class="form-group">
+                                        <label class="control-label" for="VendorName">Vendor Name</label>
+                                        <input class="form-control" type="text" id="VendorName" name="VendorName" />
+                                        <span class="text-danger" id="VendorName-error"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label" for="Message">Message</label>
+                                        <textarea class="form-control" type="text" id="Message" name="Message"></textarea>
+                                        <span class="text-danger" id="Message-error"></span>
+                                    </div>
+                                    <input type="hidden" id="OrderId" name="OrderId" />
+                                    <input type="hidden" id="UserId" name="UserId" />
+                                    <input type="hidden" id="Service" name="Service" />
+                                    <input type="hidden" id="Quantity" name="Quantity" />
+
+                                    <div class="form-group">
+                                        <label class="control-label" for="VendorOrderId">Vendor Order ID</label>
+                                        <input class="form-control" type="text" id="VendorOrderId" name="VendorOrderId" />
+                                        <span class="text-danger" id="VendorOrderId-error"></span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="control-label" for="ExpectedTime">Expected Time</label>
+                                        <input class="form-control" type="text" id="ExpectedTime" name="ExpectedTime" />
+                                        <span class="text-danger" id="ExpectedTime-error"></span>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="control-label" for="PreviousQuantity">Previous Quantity</label>
+                                        <input class="form-control" type="text" id="PreviousQuantity" name="PreviousQuantity" />
+                                        <span class="text-danger" id="PreviousQuantity-error"></span>
+                                    </div>
+                                    <br />
+                                    <div class="form-group">
+                                        <button type="button" class="btn btn-primary" id="saveOrderBtn">Save</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+                <!-- Modal for Cancel button -->
+                @section scripts {
+                    <script>
+                        $(document).ready(function () {
+                            var ordersTable = $('#ordersTable').DataTable();
+
+                            // Approve button click event
+                            $(document).on('click', '.approve-btn', function () {
+                                var orderId = $(this).data('order-id');
+                                approveOrder(orderId);
+                            });
+
+                            // Function to handle approval
+                            function approveOrder(orderId) {
+                                $.ajax({
+                                    url: '/Home/ApproveOrder',
+                                    type: 'POST',
+                                    data: { orderId: orderId },
+                                    success: function (result) {
+                                        if (result.success) {
+                                            alert('Order cancel successfully');
+                                            location.reload(); // Refresh the page
+                                        } else {
+                                            console.error(result.error);
+                                        }
+                                    },
+                                    error: function () {
+                                        console.error('An error occurred while approving the order.');
+                                    }
+                                });
+                            }
+
+                            // Submit order button click event
+                            $(document).on('click', '.submit-order-btn', function () {
+                                // Populate modal fields with data from the selected row
+                                var orderId = $(this).data('order-id');
+                                var userId = $(this).data('user-id');
+                                var service = $(this).data('service');
+                                var quantity = $(this).data('quantity');
+
+                                // Set the data in the modal form
+                                $('#submitOrderModal #OrderId').val(orderId);
+                                $('#submitOrderModal #UserId').val(userId);
+                                $('#submitOrderModal #Service').val(service);
+                                $('#submitOrderModal #Quantity').val(quantity);
+
+                                // Show the modal
+                                $('#submitOrderModal').modal('show');
+                            });
+
+                            // Save order button click event inside the modal
+                            $('#saveOrderBtn').click(function () {
+                                // Manually trigger the form submission
+                                $('#submitOrderForm').submit();
+                            });
+
+                            // Form submission event
+                            $('#submitOrderForm').submit(function (event) {
+                                event.preventDefault();
+
+                                $.ajax({
+                                    url: '/Home/SubmitOrder',
+                                    type: 'POST',
+                                    data: $('#submitOrderForm').serialize(),
+                                    success: function (result) {
+                                        if (result.success) {
+                                            window.location.href = window.location.href;
+                                        } else {
+                                            window.location.href = window.location.href;
+                                        }
+                                    },
+                                    error: function () {
+                                        window.location.href = window.location.href;
+                                    }
+                                });
+                            });
+
+                            // Cancel button click event
+                            $(document).on('click', '.approve-btn', function () {
+                                var orderId = $(this).data('order-id');
+                                // Set the order ID in the modal form
+                                $('#cancelOrderModal #OrderId').val(orderId);
+                                // Show the modal
+                                $('#cancelOrderModal').modal('show');
+                            });
+
+                            // Confirm cancel button click event inside the cancel modal
+                            $('#confirmCancelBtn').click(function () {
+                                // Manually trigger the form submission
+                                $('#cancelOrderForm').submit();
+                            });
+
+                            // Form submission event for the cancel order
+                            $('#cancelOrderForm').submit(function (event) {
+                                event.preventDefault();
+
+                                $.ajax({
+                                    url: '/Home/ApproveOrder',
+                                    type: 'POST',
+                                    data: $('#cancelOrderForm').serialize(),
+                                    success: function (result) {
+                                        if (result.success) {
+                                            alert('Order canceled successfully');
+                                            location.reload(); // Refresh the page
+                                        } else {
+                                            console.error(result.error);
+                                        }
+                                    },
+                                    error: function () {
+                                        console.error('An error occurred while canceling the order.');
+                                    }
+                                });
+                            });
+                        });
+                    </script>
+                }
+            </main>
+        </div>
+    </div>
+</div>
+

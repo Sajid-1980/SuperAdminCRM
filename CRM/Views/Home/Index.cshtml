@@ -1,0 +1,303 @@
+﻿<style>
+    .large-card {
+        width: 350px; /* Adjust width as needed */
+        height: 200px; /* Adjust height as needed */
+    }
+</style>
+<div class="page-wrapper">
+
+    <div class="content">
+        <div class="card" style="background-color: #f9f9f9; box-shadow: 4px 6px 9px rgba(28, 21, 21, 0.1);">
+           <div style="height: 247px;margin-left: 22px;margin-top: 21px;margin-right: 22px;">
+           
+        <div class="row">
+
+
+
+            <div class="col-lg-3 col-sm-6 col-12 d-flex">
+                        <div class="dash-count" style="background-color: white;">
+                    <div class="dash-counts">
+                                <h4 style="color: #1b2850;">@ViewBag.ClientCount</h4>
+                                <h5 style="color: #1b2850;">Customers</h5>
+                    </div>
+                            <div class="dash-imgs" style="color:  #1b2850;">
+                                <i class='fas fa-user-plus' style='font-size:48px;color:#1b2850'></i>
+                    </div>
+                </div>
+                    </div>
+            <div class="col-lg-3 col-sm-6 col-12 d-flex">
+                        <div class="dash-count das1" style="background-color: white;">
+                    <div class="dash-counts">
+                                <h4 style ="color: #00cfe8;">@ViewBag.Leads</h4>
+                                <h5 style="color: #00cfe8;">Leads</h5>
+                    </div>
+                            <div class="dash-imgs" style="color: #00cfe8;">
+                                <i class='fas fa-user-friends' style='font-size:48px;color:#00cfe8'></i>
+                    </div>
+                </div>
+                    </div>
+            <div class="col-lg-3 col-sm-6 col-12 d-flex">
+                        <div class="dash-count das2" style="background-color: white;">
+                    <div class="dash-counts">
+                                <h4 style="color: #ff9f43;">@ViewBag.ServiceCount</h4> <!-- Use ViewBag.ServiceCount here -->
+                                <h5 style="color: #ff9f43;">Services</h5>
+                    </div>
+                            <div class="dash-imgs" style="color: #ff9f43;">
+                        <i data-feather="user-check"></i>
+                    </div>
+                </div>
+                    </div>
+            <div class="col-lg-3 col-sm-6 col-12 d-flex">
+                        <div class="dash-count das3" style="background-color: white;">
+                    <div class="dash-counts">
+                                <h4 style="color: #28c76f;">105</h4>
+                                <h5 style="color: #28c76f;">Invoices</h5>
+                    </div>
+                            <div class="dash-imgs" style="color: #28c76f;">
+                        <i data-feather="file"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+
+
+
+            <div class="col-lg-3 col-sm-6 col-12 d-flex">
+                        <div class="dash-count das3" style="background-color: white;">
+                    <div class="dash-counts">
+                                <h4 style="color: #28c76f;">@ViewBag.SubscriptionsCount</h4> <!-- Use ViewBag.SubscriptionsCount here -->
+                                <h5 style="color: #28c76f;">Subscriptions</h5>
+                    </div>
+                            <div class="dash-imgs" style="color: #28c76f;">
+                        <i data-feather="user-check"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 col-12 d-flex">
+                        <div class="dash-count" style="background-color: white;">
+                    <div class="dash-counts">
+                                <h4 style="color: #1b2850;">@ViewBag.MaskOrderCount</h4> <!-- Use ViewBag.MaskOrderCount here -->
+                                <h5 style="color: #1b2850;">Mask Orders</h5>
+                    </div>
+                            <div class="dash-imgs" style="color: #1b2850;">
+                        <i data-feather="user-check"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 col-12 d-flex">
+                        <div class="dash-count das1" style="background-color: white;">
+                    <div class="dash-counts">
+                                <h4 style="color: #00cfe8;">@ViewBag.ClientOrderCount</h4> <!-- Use ViewBag.ClientOrderCount here -->
+                                <h5 style="color: #00cfe8;">Client Orders</h5>
+                    </div>
+                            <div class="dash-imgs" style="color: #00cfe8;">
+                        <i data-feather="user-check"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 col-12 d-flex">
+                        <div class="dash-count das2" style="background-color: white;">
+                    <div class="dash-counts">
+                                <h4 style="color: #ff9f43;">@ViewBag.AdminOrderCount</h4> <!-- Use ViewBag.AdminOrderCount here -->
+                                <h5 style="color: #ff9f43;">Admin Orders</h5>
+                    </div>
+                            <div class="dash-imgs" style="color: #ff9f43;">
+                                <i class='fas fa-user-tie' style='font-size:48px;color:#ff9f43'></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-7 col-sm-12 col-12 d-flex">
+                <div class="card flex-fill">
+                    <div class="card-header pb-0 d-flex justify-content-between align-items-center">
+                        <h5 class="card-title mb-0">Purchase & Sales</h5>
+                        <div class="graph-sets">
+                            <ul>
+                                <li>
+                                    <span>Sales</span>
+                                </li>
+                                <li>
+                                    <span>Purchase</span>
+                                </li>
+                            </ul>
+                            <div class="dropdown">
+                                <button class="btn btn-white btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                    2022 <img src="~/assets/img/icons/dropdown.svg" alt="img" class="ms-2">
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <li>
+                                        <a href="javascript:void(0);" class="dropdown-item">2022</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);" class="dropdown-item">2021</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);" class="dropdown-item">2020</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div id="sales_charts"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5 col-sm-12 col-12 d-flex">
+                <div class="card flex-fill">
+                    <div class="card-header pb-0 d-flex justify-content-between align-items-center">
+                        <h4 class="card-title mb-0">Recently Added Products</h4>
+                        <div class="dropdown">
+                            <a href="javascript:void(0);" data-bs-toggle="dropdown" aria-expanded="false" class="dropset">
+                                <i class="fa fa-ellipsis-v"></i>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <li>
+                                    <a href="productlist.html" class="dropdown-item">Product List</a>
+                                </li>
+                                <li>
+                                    <a href="addproduct.html" class="dropdown-item">Product Add</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive dataview">
+                            <table class="table datatable ">
+                                <thead>
+                                    <tr>
+                                        <th>Sno</th>
+                                        <th>Products</th>
+                                        <th>Price</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td class="productimgname">
+                                            <a href="productlist.html" class="product-img">
+                                                <img src="~/assets/img/product/product22.jpg" alt="product">
+                                            </a>
+                                            <a href="productlist.html">Apple Earpods</a>
+                                        </td>
+                                        <td>$891.2</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td class="productimgname">
+                                            <a href="productlist.html" class="product-img">
+                                                <img src="~/assets/img/product/product23.jpg" alt="product">
+                                            </a>
+                                            <a href="productlist.html">iPhone 11</a>
+                                        </td>
+                                        <td>$668.51</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td class="productimgname">
+                                            <a href="productlist.html" class="product-img">
+                                                <img src="~/assets/img/product/product24.jpg" alt="product">
+                                            </a>
+                                            <a href="productlist.html">samsung</a>
+                                        </td>
+                                        <td>$522.29</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td class="productimgname">
+                                            <a href="productlist.html" class="product-img">
+                                                <img src="~/assets/img/product/product6.jpg" alt="product">
+                                            </a>
+                                            <a href="productlist.html">Macbook Pro</a>
+                                        </td>
+                                        <td>$291.01</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-0">
+            <div class="card-body">
+                <h4 class="card-title">Expired Products</h4>
+                <div class="table-responsive dataview">
+                    <table class="table datatable ">
+                        <thead>
+                            <tr>
+                                <th>SNo</th>
+                                <th>Product Code</th>
+                                <th>Product Name</th>
+                                <th>Brand Name</th>
+                                <th>Category Name</th>
+                                <th>Expiry Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td><a href="javascript:void(0);">IT0001</a></td>
+                                <td class="productimgname">
+                                    <a class="product-img" href="productlist.html">
+                                        <img src="~/assets/img/product/product2.jpg" alt="product">
+                                    </a>
+                                    <a href="productlist.html">Orange</a>
+                                </td>
+                                <td>N/D</td>
+                                <td>Fruits</td>
+                                <td>12-12-2022</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td><a href="javascript:void(0);">IT0002</a></td>
+                                <td class="productimgname">
+                                    <a class="product-img" href="productlist.html">
+                                        <img src="~/assets/img/product/product3.jpg" alt="product">
+                                    </a>
+                                    <a href="productlist.html">Pineapple</a>
+                                </td>
+                                <td>N/D</td>
+                                <td>Fruits</td>
+                                <td>25-11-2022</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td><a href="javascript:void(0);">IT0003</a></td>
+                                <td class="productimgname">
+                                    <a class="product-img" href="productlist.html">
+                                        <img src="~/assets/img/product/product4.jpg" alt="product">
+                                    </a>
+                                    <a href="productlist.html">Stawberry</a>
+                                </td>
+                                <td>N/D</td>
+                                <td>Fruits</td>
+                                <td>19-11-2022</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td><a href="javascript:void(0);">IT0004</a></td>
+                                <td class="productimgname">
+                                    <a class="product-img" href="productlist.html">
+                                        <img src="~/assets/img/product/product5.jpg" alt="product">
+                                    </a>
+                                    <a href="productlist.html">Avocat</a>
+                                </td>
+                                <td>N/D</td>
+                                <td>Fruits</td>
+                                <td>20-11-2022</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

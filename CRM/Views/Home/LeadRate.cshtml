@@ -1,0 +1,69 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<style>
+    th {
+        background-color: rgb(27, 40, 80) !important;
+        color: white !important;
+    }
+</style>
+
+<div class="page-wrapper">
+    <div class="content">
+        <div class="row">
+            <main id="main">
+                @model List<SuperAdmin.Models.LeadRate>
+
+                @{
+                    ViewData["Title"] = "Lead Rate";
+                }
+
+                <h1>Lead Rate</h1>
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Lead Rate ID</th>
+                            <th>Unit Lead Price</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var LeadRate in Model)
+                        {
+                            <tr>
+                                <td>@LeadRate.LeadRateId</td>
+                                <td>@LeadRate.UnitLead</td>
+                                <td>
+                                    <button type="button" class="btn btn-primary" onclick="editLeadRate(@LeadRate.LeadRateId)">Edit</button>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
+                <script>
+                    function editLeadRate(leadRateId) {
+                        // Make an AJAX request to fetch LeadRate details and populate the modal form
+                        $.ajax({
+                            url: '/Home/GetLeadRateDetails',
+                            type: 'GET',
+                            data: { leadRateId: leadRateId },
+                            success: function (data) {
+                                $('#leadRateId').val(data.leadRateId);
+                                $('#unitLead').val(data.unitLead);
+                                $('#editLeadRateModal').modal('show');
+                            },
+                            error: function (xhr, status, error) {
+                                console.error(xhr.responseText);
+                            }
+                        });
+                    }
+                </script>
+
+            </main>
+        </div>
+    </div>
+</div>
