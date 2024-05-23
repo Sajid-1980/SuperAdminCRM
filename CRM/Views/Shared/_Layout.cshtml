@@ -1,349 +1,380 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <title>Flat Able - Premium Admin Template by Phoenixcoded</title>
+    <!-- HTML5 Shim and Respond.js IE11 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 11]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    <!-- Meta -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-    <meta name="description" content="POS - Bootstrap Admin Template">
-    <meta name="keywords" content="admin, estimates, bootstrap, business, corporate, creative, management, minimal, modern,  html5, responsive">
-    <meta name="author" content="Dreamguys - Bootstrap Admin Template">
-    <meta name="robots" content="noindex, nofollow">
-    <title>Super Admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="">
+    <meta name="author" content="Phoenixcoded" />
+    <!-- Favicon icon -->
+    <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
 
-    <link rel="shortcut icon" type="image/x-icon" href="~/assets/img/favicon.jpg">
+    <!-- prism css -->
+    <link rel="stylesheet" href="/assets/css/plugins/prism-coy.css">
+    <!-- vendor css -->
+    <link rel="stylesheet" href="/assets/css/style.css">
 
-    <link rel="stylesheet" href="~/assets/css/bootstrap.min.css">
 
-    <link rel="stylesheet" href="~/assets/css/animate.css">
 
-    <link rel="stylesheet" href="~/assets/css/dataTables.bootstrap4.min.css">
-
-    <link rel="stylesheet" href="~/assets/plugins/fontawesome/css/fontawesome.min.css">
-    <link rel="stylesheet" href="~/assets/plugins/fontawesome/css/all.min.css">
-
-    <link rel="stylesheet" href="~/assets/css/style.css">
 </head>
+
 <body>
-    @*  <div id="global-loader">
-    <div class="whirly-loader"> </div>
-    </div> *@
-
-    <div class="main-wrapper">
-
-        <div class="header">
-
-            <div class="header-left active">
-                <a href="index.html" class="logo">
-                    <img src="~/assets/img/logo.png" alt="">
-                </a>
-                <a href="index.html" class="logo-small">
-                    <img src="~/assets/img/logo-small.png" alt="">
-                </a>
-                <a id="toggle_btn" href="javascript:void(0);">
-                </a>
-            </div>
-
-            <a id="mobile_btn" class="mobile_btn" href="#sidebar">
-                <span class="bar-icon">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </span>
-            </a>
-
-            <ul class="nav user-menu">
-
-                <li class="nav-item">
-                    <div class="top-nav-search">
-                        <a href="javascript:void(0);" class="responsive-search">
-                            <i class="fa fa-search"></i>
-                        </a>
-                        <form action="#">
-                            <div class="searchinputs">
-                                <input type="text" placeholder="Search Here ...">
-                                <div class="search-addon">
-                                    <span><img src="~/assets/img/icons/closes.svg" alt="img"></span>
-                                </div>
-                            </div>
-                            <a class="btn" id="searchdiv"><img src="~/assets/img/icons/search.svg" alt="img"></a>
-                        </form>
-                    </div>
-                </li>
-
-
-                <li class="nav-item dropdown has-arrow flag-nav">
-                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="javascript:void(0);" role="button">
-                        <img src="~/assets/img/flags/us.png" alt="" height="20">
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right">
-                        <a href="javascript:void(0);" class="dropdown-item">
-                            <img src="~/assets/img/flags/us.png" alt="" height="16"> English
-                        </a>
-                        <a href="javascript:void(0);" class="dropdown-item">
-                            <img src="~/assets/img/flags/fr.png" alt="" height="16"> French
-                        </a>
-                        <a href="javascript:void(0);" class="dropdown-item">
-                            <img src="~/assets/img/flags/es.png" alt="" height="16"> Spanish
-                        </a>
-                        <a href="javascript:void(0);" class="dropdown-item">
-                            <img src="~/assets/img/flags/de.png" alt="" height="16"> German
-                        </a>
-                    </div>
-                </li>
-
-
-                <li class="nav-item dropdown">
-                    <a href="javascript:void(0);" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
-                        <img src="~/assets/img/icons/notification-bing.svg" alt="img"> <span class="badge rounded-pill">4</span>
-                    </a>
-                    <div class="dropdown-menu notifications">
-                        <div class="topnav-dropdown-header">
-                            <span class="notification-title">Notifications</span>
-                            <a href="javascript:void(0)" class="clear-noti"> Clear All </a>
+    <!-- [ Pre-loader ] start -->
+    
+    <!-- [ Pre-loader ] End -->
+    <!-- [ navigation menu ] start -->
+    <nav class="pcoded-navbar">
+        <div class="navbar-wrapper">
+            <div class="navbar-content scroll-div">
+                <div class="">
+                    <div class="main-menu-header">
+                        <img class="img-radius" src="/assets/images/user/avatar-2.jpg" alt="User-Profile-Image">
+                        <div class="user-details">
+                            <span>Naveed Malik</span>
+                            <div id="more-details">SuperAdmin<i class="fa fa-chevron-down m-l-5"></i></div>
                         </div>
-                        <div class="noti-content">
-                            <ul class="notification-list">
-                                <li class="notification-message">
-                                    <a href="activities.html">
-                                        <div class="media d-flex">
-                                            <span class="avatar flex-shrink-0">
-                                                <img alt="" src="~/assets/img/profiles/avatar-02.jpg">
-                                            </span>
-                                            <div class="media-body flex-grow-1">
-                                                <p class="noti-details"><span class="noti-title">John Doe</span> added new task <span class="noti-title">Patient appointment booking</span></p>
-                                                <p class="noti-time"><span class="notification-time">4 mins ago</span></p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="notification-message">
-                                    <a href="activities.html">
-                                        <div class="media d-flex">
-                                            <span class="avatar flex-shrink-0">
-                                                <img alt="" src="~/assets/img/profiles/avatar-03.jpg">
-                                            </span>
-                                            <div class="media-body flex-grow-1">
-                                                <p class="noti-details"><span class="noti-title">Tarah Shropshire</span> changed the task name <span class="noti-title">Appointment booking with payment gateway</span></p>
-                                                <p class="noti-time"><span class="notification-time">6 mins ago</span></p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="notification-message">
-                                    <a href="activities.html">
-                                        <div class="media d-flex">
-                                            <span class="avatar flex-shrink-0">
-                                                <img alt="" src="~/assets/img/profiles/avatar-06.jpg">
-                                            </span>
-                                            <div class="media-body flex-grow-1">
-                                                <p class="noti-details"><span class="noti-title">Misty Tison</span> added <span class="noti-title">Domenic Houston</span> and <span class="noti-title">Claire Mapes</span> to project <span class="noti-title">Doctor available module</span></p>
-                                                <p class="noti-time"><span class="notification-time">8 mins ago</span></p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="notification-message">
-                                    <a href="activities.html">
-                                        <div class="media d-flex">
-                                            <span class="avatar flex-shrink-0">
-                                                <img alt="" src="~/assets/img/profiles/avatar-17.jpg">
-                                            </span>
-                                            <div class="media-body flex-grow-1">
-                                                <p class="noti-details"><span class="noti-title">Rolland Webber</span> completed task <span class="noti-title">Patient and Doctor video conferencing</span></p>
-                                                <p class="noti-time"><span class="notification-time">12 mins ago</span></p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="notification-message">
-                                    <a href="activities.html">
-                                        <div class="media d-flex">
-                                            <span class="avatar flex-shrink-0">
-                                                <img alt="" src="~/assets/img/profiles/avatar-13.jpg">
-                                            </span>
-                                            <div class="media-body flex-grow-1">
-                                                <p class="noti-details"><span class="noti-title">Bernardo Galaviz</span> added new task <span class="noti-title">Private chat module</span></p>
-                                                <p class="noti-time"><span class="notification-time">2 days ago</span></p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
+                    </div>
+                    <div class="collapse" id="nav-user-link">
+                        <ul class="list-unstyled">
+                            <li class="list-group-item"><a href="user-profile.html"><i class="feather icon-user m-r-5"></i>View Profile</a></li>
+                            <li class="list-group-item"><a href="#!"><i class="feather icon-settings m-r-5"></i>Settings</a></li>
+                            <li class="list-group-item"><a href="auth-normal-sign-in.html"><i class="feather icon-log-out m-r-5"></i>Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <ul class="nav pcoded-inner-navbar">
+                    <li class="nav-item pcoded-menu-caption">
+                        <label>Navigation</label>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link "><span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Dashboard</span></a>
+                    </li>
+                    <li class="nav-item pcoded-hasmenu">
+                        <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-layout"></i></span><span class="pcoded-mtext">Manage Leads</span></a>
+                        <ul class="pcoded-submenu">
+                            <li>
+                                <a asp-area="" asp-controller="Home" asp-action="AllLeads">
+                                    <i class="bi bi-circle"></i><span>View Leades</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a asp-area="" asp-controller="Home" asp-action="LeadForm">
+                                    <i class="bi bi-circle"></i><span>Add Lead</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a asp-area="" asp-controller="Home" asp-action="BulkUploadLeads">
+                                    <i class="bi bi-circle"></i><span>Lead Bulk Upload</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                  
+                    <li class="nav-item pcoded-hasmenu">
+                        <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-box"></i></span><span class="pcoded-mtext">Services</span></a>
+                        <ul class="pcoded-submenu">
+                            <li>
+                                <a asp-area="" asp-controller="Home" asp-action="ViewServices">
+                                    <i class="bi bi-circle"></i><span>View Services</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a asp-area="" asp-controller="Home" asp-action="AddServices">
+                                    <i class="bi bi-circle"></i><span>Add Services</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a asp-area="" asp-controller="Home" asp-action="Clients">
+                                    <i class="bi bi-circle"></i><span>Clients</span>
+                                </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
+              
+                    <li class="nav-item pcoded-hasmenu">
+                        <a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-lock"></i></span><span class="pcoded-mtext">Orders</span></a>
+                        <ul class="pcoded-submenu">
+                            <li>
+                                <a asp-area="" asp-controller="Home" asp-action="Mask">
+                                    <i class="bi bi-circle"></i><span>Mask Orders</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a asp-area="" asp-controller="Home" asp-action="Orders">
+                                    <i class="bi bi-circle"></i><span>Client Orders</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a asp-area="" asp-controller="Home" asp-action="AdminOrders">
+                                    <i class="bi bi-circle"></i><span>Admin Orders</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a asp-area="" asp-controller="Invoice" asp-action="Index">
+                                    <i class="bi bi-circle"></i><span>Invoices</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                  
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- [ navigation menu ] end -->
+    <!-- [ Header ] start -->
+    <header class="navbar pcoded-header navbar-expand-lg navbar-light header-dark">
+        <div class="m-header">
+            <a class="mobile-menu" id="mobile-collapse" href="#!"><span></span></a>
+            <a href="#!" class="b-brand">
+                <!-- ========   change your logo hear   ============ -->
+                <img src="assets/images/logo.png" alt="" class="logo">
+                <img src="assets/images/logo-icon.png" alt="" class="logo-thumb">
+            </a>
+            <a href="#!" class="mob-toggler">
+                <i class="feather icon-more-vertical"></i>
+            </a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a href="#!" class="pop-search"><i class="feather icon-search"></i></a>
+                    <div class="search-bar">
+                        <input type="text" class="form-control border-0 shadow-none" placeholder="Search hear">
+                        <button type="button" class="close" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <div class="dropdown">
+                        <a class="dropdown-toggle h-drop" href="#" data-toggle="dropdown">
+                            Dropdown
+                        </a>
+                        <div class="dropdown-menu profile-notification ">
+                            <ul class="pro-body">
+                                <li><a href="user-profile.html" class="dropdown-item"><i class="fas fa-circle"></i> Profile</a></li>
+                                <li><a href="email_inbox.html" class="dropdown-item"><i class="fas fa-circle"></i> My Messages</a></li>
+                                <li><a href="auth-signin.html" class="dropdown-item"><i class="fas fa-circle"></i> Lock Screen</a></li>
                             </ul>
                         </div>
-                        <div class="topnav-dropdown-footer">
-                            <a href="activities.html">View all Notifications</a>
-                        </div>
                     </div>
                 </li>
-
-                <li class="nav-item dropdown has-arrow main-drop">
-                    <a href="javascript:void(0);" class="dropdown-toggle nav-link userset" data-bs-toggle="dropdown">
-                        <span class="user-img">
-                            <img src="~/assets/img/profiles/avator1.jpg" alt="">
-                            <span class="status online"></span>
-                        </span>
-                    </a>
-                    <div class="dropdown-menu menu-drop-user">
-                        <div class="profilename">
-                            <div class="profileset">
-                                <span class="user-img">
-                                    <img src="~/assets/img/profiles/avator1.jpg" alt="">
-                                    <span class="status online"></span>
-                                </span>
-                                <div class="profilesets">
-                                    <h6>John Doe</h6>
-                                    <h5>Admin</h5>
+                <li class="nav-item">
+                    <div class="dropdown mega-menu">
+                        <a class="dropdown-toggle h-drop" href="#" data-toggle="dropdown">
+                            Mega
+                        </a>
+                        <div class="dropdown-menu profile-notification ">
+                            <div class="row no-gutters">
+                                <div class="col">
+                                    <h6 class="mega-title">UI Element</h6>
+                                    <ul class="pro-body">
+                                        <li><a href="#!" class="dropdown-item"><i class="fas fa-circle"></i> Alert</a></li>
+                                        <li><a href="#!" class="dropdown-item"><i class="fas fa-circle"></i> Button</a></li>
+                                        <li><a href="#!" class="dropdown-item"><i class="fas fa-circle"></i> Badges</a></li>
+                                        <li><a href="#!" class="dropdown-item"><i class="fas fa-circle"></i> Cards</a></li>
+                                        <li><a href="#!" class="dropdown-item"><i class="fas fa-circle"></i> Modal</a></li>
+                                        <li><a href="#!" class="dropdown-item"><i class="fas fa-circle"></i> Tabs & pills</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col">
+                                    <h6 class="mega-title">Forms</h6>
+                                    <ul class="pro-body">
+                                        <li><a href="#!" class="dropdown-item"><i class="feather icon-minus"></i> Elements</a></li>
+                                        <li><a href="#!" class="dropdown-item"><i class="feather icon-minus"></i> Validation</a></li>
+                                        <li><a href="#!" class="dropdown-item"><i class="feather icon-minus"></i> Masking</a></li>
+                                        <li><a href="#!" class="dropdown-item"><i class="feather icon-minus"></i> Wizard</a></li>
+                                        <li><a href="#!" class="dropdown-item"><i class="feather icon-minus"></i> Picker</a></li>
+                                        <li><a href="#!" class="dropdown-item"><i class="feather icon-minus"></i> Select</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col">
+                                    <h6 class="mega-title">Application</h6>
+                                    <ul class="pro-body">
+                                        <li><a href="#!" class="dropdown-item"><i class="feather icon-mail"></i> Email</a></li>
+                                        <li><a href="#!" class="dropdown-item"><i class="feather icon-clipboard"></i> Task</a></li>
+                                        <li><a href="#!" class="dropdown-item"><i class="feather icon-check-square"></i> To-Do</a></li>
+                                        <li><a href="#!" class="dropdown-item"><i class="feather icon-image"></i> Gallery</a></li>
+                                        <li><a href="#!" class="dropdown-item"><i class="feather icon-help-circle"></i> Helpdesk</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col">
+                                    <h6 class="mega-title">Extension</h6>
+                                    <ul class="pro-body">
+                                        <li><a href="#!" class="dropdown-item"><i class="feather icon-file-plus"></i> Editor</a></li>
+                                        <li><a href="#!" class="dropdown-item"><i class="feather icon-file-minus"></i> Invoice</a></li>
+                                        <li><a href="#!" class="dropdown-item"><i class="feather icon-calendar"></i> Full calendar</a></li>
+                                        <li><a href="#!" class="dropdown-item"><i class="feather icon-upload-cloud"></i> File upload</a></li>
+                                        <li><a href="#!" class="dropdown-item"><i class="feather icon-scissors"></i> Image cropper</a></li>
+                                    </ul>
                                 </div>
                             </div>
-                            <hr class="m-0">
-                            <a class="dropdown-item" href="profile.html"> <i class="me-2" data-feather="user"></i> My Profile</a>
-                            <a class="dropdown-item" href="generalsettings.html"><i class="me-2" data-feather="settings"></i>Settings</a>
-                            <hr class="m-0">
-                            <a class="dropdown-item logout pb-0" href="signin.html"><img src="~/assets/img/icons/log-out.svg" class="me-2" alt="img">Logout</a>
                         </div>
                     </div>
                 </li>
             </ul>
-            <div class="dropdown mobile-user-menu">
-                <a href="javascript:void(0);" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
-                <div class="dropdown-menu dropdown-menu-right">
-                    <a class="dropdown-item" href="profile.html">My Profile</a>
-                    <a class="dropdown-item" href="generalsettings.html">Settings</a>
-                    <a class="dropdown-item" href="signin.html">Logout</a>
-                </div>
-            </div>
+            <ul class="navbar-nav ml-auto">
+                <li>
+                    <div class="dropdown">
+                        <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+                            <i class="icon feather icon-bell"></i>
+                            <span class="badge badge-pill badge-danger">5</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right notification">
+                            <div class="noti-head">
+                                <h6 class="d-inline-block m-b-0">Notifications</h6>
+                                <div class="float-right">
+                                    <a href="#!" class="m-r-10">mark as read</a>
+                                    <a href="#!">clear all</a>
+                                </div>
+                            </div>
+                            <ul class="noti-body">
+                                <li class="n-title">
+                                    <p class="m-b-0">NEW</p>
+                                </li>
+                                <li class="notification">
+                                    <div class="media">
+                                        <img class="img-radius" src="/assets/images/user/avatar-1.jpg" alt="Generic placeholder image">
+                                        <div class="media-body">
+                                            <p><strong>John Doe</strong><span class="n-time text-muted"><i class="icon feather icon-clock m-r-10"></i>5 min</span></p>
+                                            <p>New ticket Added</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="n-title">
+                                    <p class="m-b-0">EARLIER</p>
+                                </li>
+                                <li class="notification">
+                                    <div class="media">
+                                        <img class="img-radius" src="/assets/images/user/avatar-2.jpg" alt="Generic placeholder image">
+                                        <div class="media-body">
+                                            <p><strong>Joseph William</strong><span class="n-time text-muted"><i class="icon feather icon-clock m-r-10"></i>10 min</span></p>
+                                            <p>Prchace New Theme and make payment</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="notification">
+                                    <div class="media">
+                                        <img class="img-radius" src="/assets/images/user/avatar-1.jpg" alt="Generic placeholder image">
+                                        <div class="media-body">
+                                            <p><strong>Sara Soudein</strong><span class="n-time text-muted"><i class="icon feather icon-clock m-r-10"></i>12 min</span></p>
+                                            <p>currently login</p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="notification">
+                                    <div class="media">
+                                        <img class="img-radius" src="/assets/images/user/avatar-2.jpg" alt="Generic placeholder image">
+                                        <div class="media-body">
+                                            <p><strong>Joseph William</strong><span class="n-time text-muted"><i class="icon feather icon-clock m-r-10"></i>30 min</span></p>
+                                            <p>Prchace New Theme and make payment</p>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="noti-footer">
+                                <a href="#!">show all</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="dropdown drp-user">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="feather icon-user"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right profile-notification">
+                            <div class="pro-head">
+                                <img src="/assets/images/user/avatar-1.jpg" class="img-radius" alt="User-Profile-Image">
+                                <span>John Doe</span>
+                                <a href="auth-signin.html" class="dud-logout" title="Logout">
+                                    <i class="feather icon-log-out"></i>
+                                </a>
+                            </div>
+                            <ul class="pro-body">
+                                <li><a href="user-profile.html" class="dropdown-item"><i class="feather icon-user"></i> Profile</a></li>
+                                <li><a href="email_inbox.html" class="dropdown-item"><i class="feather icon-mail"></i> My Messages</a></li>
+                                <li><a href="auth-signin.html" class="dropdown-item"><i class="feather icon-lock"></i> Lock Screen</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
         </div>
-        <div class="sidebar" id="sidebar">
-            <div class="sidebar-inner slimscroll">
-                <div id="sidebar-menu" class="sidebar-menu">
-                    <ul>
-                        <li class="active">
-                            <a asp-controller="Home" asp-action="Index"><img src="~/assets/img/icons/dashboard.svg" alt="img"><span> Dashboard</span> </a>
-                        </li>
-                        <li class="submenu">
-                            <a href="javascript:void(0);"><img src="~/assets/img/icons/product.svg" alt="img"><span> Manage Leads</span> <span class="menu-arrow"></span></a>
-                            <ul>
-                                <li>
-                                    <a asp-area="" asp-controller="Home" asp-action="AllLeads">
-                                        <i class="bi bi-circle"></i><span>View Leades</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a asp-area="" asp-controller="Home" asp-action="LeadForm">
-                                        <i class="bi bi-circle"></i><span>Add New Lead</span>
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a asp-area="" asp-controller="Home" asp-action="BulkUploadLeads">
-                                        <i class="bi bi-circle"></i><span>Bulk Upload Leads</span>
-                                    </a>
-                                </li>
-                             
-
-                            </ul>
-                        </li>
-                        <li class="submenu">
-                            <a href="javascript:void(0);"><img src="~/assets/img/icons/purchase1.svg" alt="img"><span> Services</span> <span class="menu-arrow"></span></a>
-                            <ul>
-                                <li>
-                                    <a asp-area="" asp-controller="Home" asp-action="ViewServices">
-                                        <i class="bi bi-circle"></i><span>View Services</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a asp-area="" asp-controller="Home" asp-action="AddServices">
-                                        <i class="bi bi-circle"></i><span>Add Services</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a asp-area="" asp-controller="Home" asp-action="clients">
-                                        <i class="bi bi-circle"></i><span>Clients</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="submenu">
-                            <a href="javascript:void(0);"><img src="~/assets/img/icons/expense1.svg" alt="img"><span> Subscription</span> <span class="menu-arrow"></span></a>
-                            <ul>
-                                
-                                <li>
-                                    <a asp-area="" asp-controller="Home" asp-action="Mask">
-                                        <i class="bi bi-circle"></i><span>Mask Request</span>
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a asp-area="" asp-controller="Home" asp-action="Orders">
-                                        <i class="bi bi-circle"></i><span>Clients Orders</span>
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a asp-area="" asp-controller="Home" asp-action="AdminOrders">
-                                        <i class="bi bi-circle"></i><span>Admin Orders</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a asp-area="" asp-controller="Invoice" asp-action="Index">
-                                        <i class="bi bi-circle"></i><span>Invoices</span>
-                                    </a>
-                                </li>
-                               
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
+    </header>
+    <!-- [ Header ] end -->
+    <!-- [ Main Content ] start -->
+  
+    <!-- [ Main Content ] end -->
+    <!-- Warning Section start -->
+    <!-- Older IE warning message -->
+    <!--[if lt IE 11]>
+        <div class="ie-warning">
+            <h1>Warning!!</h1>
+            <p>You are using an outdated version of Internet Explorer, please upgrade
+               <br/>to any of the following web browsers to access this website.
+            </p>
+            <div class="iew-container">
+                <ul class="iew-download">
+                    <li>
+                        <a href="http://www.google.com/chrome/">
+                            <img src="assets/images/browser/chrome.png" alt="Chrome">
+                            <div>Chrome</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.mozilla.org/en-US/firefox/new/">
+                            <img src="assets/images/browser/firefox.png" alt="Firefox">
+                            <div>Firefox</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://www.opera.com">
+                            <img src="assets/images/browser/opera.png" alt="Opera">
+                            <div>Opera</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.apple.com/safari/">
+                            <img src="assets/images/browser/safari.png" alt="Safari">
+                            <div>Safari</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+                            <img src="assets/images/browser/ie.png" alt="">
+                            <div>IE (11 & above)</div>
+                        </a>
+                    </li>
+                </ul>
             </div>
+            <p>Sorry for the inconvenience!</p>
         </div>
-    </div>
+    <![endif]-->
+    <!-- Warning Section Ends -->
+    <!-- Required Js -->
     <div>
         @RenderBody() <!-- This is where the content of your views will be rendered -->
     </div>
     @RenderSection("scripts", required: false)
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            // Handle click event on dropdown parent
-            $('.submenu > a').click(function (e) {
-                e.preventDefault();
+    <script src="/assets/js/vendor-all.min.js"></script>
+    <script src="/assets/js/plugins/bootstrap.min.js"></script>
+    <script src="/assets/js/pcoded.min.js"></script>
 
-                // Toggle active class on parent
-                $(this).parent().toggleClass('active');
-
-                // Toggle visibility of dropdown
-                $(this).next('ul').slideToggle();
-            });
-
-            // Preserve the active dropdown on page reload or direct load
-            var currentPage = window.location.pathname;
-            $('.submenu ul li a').each(function () {
-                if ($(this).attr('href') === currentPage) {
-                    // Add active class to the current link
-                    $(this).addClass('active');
-                    // Add active class to the parent dropdown
-                    $(this).parents('.submenu').addClass('active').find('ul').show();
-                    // Add active class to the parent dropdown link
-                    $(this).parents('.submenu').prev('a').addClass('active');
-                }
-            });
-        });
-
-    </script>
-
-    <script src="~/assets/js/jquery-3.6.0.min.js"></script>
-
-    <script src="~/assets/js/feather.min.js"></script>
-
-    <script src="~/assets/js/jquery.slimscroll.min.js"></script>
-
-    <script src="~/assets/js/jquery.dataTables.min.js"></script>
-    <script src="~/assets/js/dataTables.bootstrap4.min.js"></script>
-
-    <script src="~/assets/js/bootstrap.bundle.min.js"></script>
-
-    <script src="~/assets/plugins/apexchart/apexcharts.min.js"></script>
-    <script src="~/assets/plugins/apexchart/chart-data.js"></script>
-
-    <script src="~/assets/js/script.js"></script>
+    <!-- prism Js -->
+    <script src="/assets/js/plugins/prism.js"></script>
 </body>
+
 </html>

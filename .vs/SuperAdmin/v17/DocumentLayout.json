@@ -1,0 +1,403 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\aqiba\\source\\repos\\SuperAdminCRM\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8BA32A53-F0C1-46E1-9927-896C7FB200B3}|CRM\\SuperAdmin.csproj|c:\\users\\aqiba\\source\\repos\\superadmincrm\\crm\\views\\home\\viewservices.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8BA32A53-F0C1-46E1-9927-896C7FB200B3}|CRM\\SuperAdmin.csproj|solutionrelative:crm\\views\\home\\viewservices.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8BA32A53-F0C1-46E1-9927-896C7FB200B3}|CRM\\SuperAdmin.csproj|c:\\users\\aqiba\\source\\repos\\superadmincrm\\crm\\views\\home\\subscribe.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8BA32A53-F0C1-46E1-9927-896C7FB200B3}|CRM\\SuperAdmin.csproj|solutionrelative:crm\\views\\home\\subscribe.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8BA32A53-F0C1-46E1-9927-896C7FB200B3}|CRM\\SuperAdmin.csproj|c:\\users\\aqiba\\source\\repos\\superadmincrm\\crm\\views\\home\\show.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8BA32A53-F0C1-46E1-9927-896C7FB200B3}|CRM\\SuperAdmin.csproj|solutionrelative:crm\\views\\home\\show.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8BA32A53-F0C1-46E1-9927-896C7FB200B3}|CRM\\SuperAdmin.csproj|c:\\users\\aqiba\\source\\repos\\superadmincrm\\crm\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8BA32A53-F0C1-46E1-9927-896C7FB200B3}|CRM\\SuperAdmin.csproj|solutionrelative:crm\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8BA32A53-F0C1-46E1-9927-896C7FB200B3}|CRM\\SuperAdmin.csproj|c:\\users\\aqiba\\source\\repos\\superadmincrm\\crm\\views\\home\\orders.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8BA32A53-F0C1-46E1-9927-896C7FB200B3}|CRM\\SuperAdmin.csproj|solutionrelative:crm\\views\\home\\orders.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8BA32A53-F0C1-46E1-9927-896C7FB200B3}|CRM\\SuperAdmin.csproj|c:\\users\\aqiba\\source\\repos\\superadmincrm\\crm\\views\\home\\mask.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8BA32A53-F0C1-46E1-9927-896C7FB200B3}|CRM\\SuperAdmin.csproj|solutionrelative:crm\\views\\home\\mask.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8BA32A53-F0C1-46E1-9927-896C7FB200B3}|CRM\\SuperAdmin.csproj|c:\\users\\aqiba\\source\\repos\\superadmincrm\\crm\\views\\home\\leadrate.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8BA32A53-F0C1-46E1-9927-896C7FB200B3}|CRM\\SuperAdmin.csproj|solutionrelative:crm\\views\\home\\leadrate.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8BA32A53-F0C1-46E1-9927-896C7FB200B3}|CRM\\SuperAdmin.csproj|c:\\users\\aqiba\\source\\repos\\superadmincrm\\crm\\views\\home\\leadform.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8BA32A53-F0C1-46E1-9927-896C7FB200B3}|CRM\\SuperAdmin.csproj|solutionrelative:crm\\views\\home\\leadform.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8BA32A53-F0C1-46E1-9927-896C7FB200B3}|CRM\\SuperAdmin.csproj|C:\\Users\\aqiba\\source\\repos\\SuperAdminCRM\\crm\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8BA32A53-F0C1-46E1-9927-896C7FB200B3}|CRM\\SuperAdmin.csproj|solutionrelative:crm\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8BA32A53-F0C1-46E1-9927-896C7FB200B3}|CRM\\SuperAdmin.csproj|c:\\users\\aqiba\\source\\repos\\superadmincrm\\crm\\views\\home\\detuct.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8BA32A53-F0C1-46E1-9927-896C7FB200B3}|CRM\\SuperAdmin.csproj|solutionrelative:crm\\views\\home\\detuct.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8BA32A53-F0C1-46E1-9927-896C7FB200B3}|CRM\\SuperAdmin.csproj|c:\\users\\aqiba\\source\\repos\\superadmincrm\\crm\\views\\home\\clients.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8BA32A53-F0C1-46E1-9927-896C7FB200B3}|CRM\\SuperAdmin.csproj|solutionrelative:crm\\views\\home\\clients.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8BA32A53-F0C1-46E1-9927-896C7FB200B3}|CRM\\SuperAdmin.csproj|c:\\users\\aqiba\\source\\repos\\superadmincrm\\crm\\views\\home\\bulkuploadleads.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8BA32A53-F0C1-46E1-9927-896C7FB200B3}|CRM\\SuperAdmin.csproj|solutionrelative:crm\\views\\home\\bulkuploadleads.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8BA32A53-F0C1-46E1-9927-896C7FB200B3}|CRM\\SuperAdmin.csproj|c:\\users\\aqiba\\source\\repos\\superadmincrm\\crm\\views\\home\\allnotifications.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8BA32A53-F0C1-46E1-9927-896C7FB200B3}|CRM\\SuperAdmin.csproj|solutionrelative:crm\\views\\home\\allnotifications.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8BA32A53-F0C1-46E1-9927-896C7FB200B3}|CRM\\SuperAdmin.csproj|c:\\users\\aqiba\\source\\repos\\superadmincrm\\crm\\views\\home\\adminorders.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8BA32A53-F0C1-46E1-9927-896C7FB200B3}|CRM\\SuperAdmin.csproj|solutionrelative:crm\\views\\home\\adminorders.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8BA32A53-F0C1-46E1-9927-896C7FB200B3}|CRM\\SuperAdmin.csproj|c:\\users\\aqiba\\source\\repos\\superadmincrm\\crm\\views\\home\\addservices.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8BA32A53-F0C1-46E1-9927-896C7FB200B3}|CRM\\SuperAdmin.csproj|solutionrelative:crm\\views\\home\\addservices.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8BA32A53-F0C1-46E1-9927-896C7FB200B3}|CRM\\SuperAdmin.csproj|c:\\users\\aqiba\\source\\repos\\superadmincrm\\crm\\views\\home\\allleads.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8BA32A53-F0C1-46E1-9927-896C7FB200B3}|CRM\\SuperAdmin.csproj|solutionrelative:crm\\views\\home\\allleads.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8BA32A53-F0C1-46E1-9927-896C7FB200B3}|CRM\\SuperAdmin.csproj|c:\\users\\aqiba\\source\\repos\\superadmincrm\\crm\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8BA32A53-F0C1-46E1-9927-896C7FB200B3}|CRM\\SuperAdmin.csproj|solutionrelative:crm\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8BA32A53-F0C1-46E1-9927-896C7FB200B3}|CRM\\SuperAdmin.csproj|c:\\users\\aqiba\\source\\repos\\superadmincrm\\crm\\areas\\identity\\pages\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8BA32A53-F0C1-46E1-9927-896C7FB200B3}|CRM\\SuperAdmin.csproj|solutionrelative:crm\\areas\\identity\\pages\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8BA32A53-F0C1-46E1-9927-896C7FB200B3}|CRM\\SuperAdmin.csproj|c:\\users\\aqiba\\source\\repos\\superadmincrm\\crm\\views\\profile\\changepassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8BA32A53-F0C1-46E1-9927-896C7FB200B3}|CRM\\SuperAdmin.csproj|solutionrelative:crm\\views\\profile\\changepassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8BA32A53-F0C1-46E1-9927-896C7FB200B3}|CRM\\SuperAdmin.csproj|c:\\users\\aqiba\\source\\repos\\superadmincrm\\crm\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{8BA32A53-F0C1-46E1-9927-896C7FB200B3}|CRM\\SuperAdmin.csproj|solutionrelative:crm\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8BA32A53-F0C1-46E1-9927-896C7FB200B3}|CRM\\SuperAdmin.csproj|C:\\Users\\aqiba\\source\\repos\\SuperAdminCRM\\crm\\superadmin.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{8BA32A53-F0C1-46E1-9927-896C7FB200B3}|CRM\\SuperAdmin.csproj|solutionrelative:crm\\superadmin.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3fd5e0cc-709a-4f8c-94c3-7f0f8dff5bb2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ViewServices.cshtml",
+              "DocumentMoniker": "C:\\Users\\aqiba\\source\\repos\\SuperAdminCRM\\CRM\\Views\\Home\\ViewServices.cshtml",
+              "RelativeDocumentMoniker": "CRM\\Views\\Home\\ViewServices.cshtml",
+              "ToolTip": "C:\\Users\\aqiba\\source\\repos\\SuperAdminCRM\\CRM\\Views\\Home\\ViewServices.cshtml",
+              "RelativeToolTip": "CRM\\Views\\Home\\ViewServices.cshtml",
+              "ViewState": "AQIAAOUAAAAAODMzMzMLwAMBAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-23T04:07:20.574Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "subscribe.cshtml",
+              "DocumentMoniker": "C:\\Users\\aqiba\\source\\repos\\SuperAdminCRM\\CRM\\Views\\Home\\subscribe.cshtml",
+              "RelativeDocumentMoniker": "CRM\\Views\\Home\\subscribe.cshtml",
+              "ToolTip": "C:\\Users\\aqiba\\source\\repos\\SuperAdminCRM\\CRM\\Views\\Home\\subscribe.cshtml",
+              "RelativeToolTip": "CRM\\Views\\Home\\subscribe.cshtml",
+              "ViewState": "AQIAAEkAAAAAOjMzMzMLwFIAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-23T04:07:03.005Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Show.cshtml",
+              "DocumentMoniker": "C:\\Users\\aqiba\\source\\repos\\SuperAdminCRM\\CRM\\Views\\Home\\Show.cshtml",
+              "RelativeDocumentMoniker": "CRM\\Views\\Home\\Show.cshtml",
+              "ToolTip": "C:\\Users\\aqiba\\source\\repos\\SuperAdminCRM\\CRM\\Views\\Home\\Show.cshtml",
+              "RelativeToolTip": "CRM\\Views\\Home\\Show.cshtml",
+              "ViewState": "AQIAAIkAAAAAZGZmZmYkwKAAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-23T04:06:33.364Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Privacy.cshtml",
+              "DocumentMoniker": "C:\\Users\\aqiba\\source\\repos\\SuperAdminCRM\\CRM\\Views\\Home\\Privacy.cshtml",
+              "RelativeDocumentMoniker": "CRM\\Views\\Home\\Privacy.cshtml",
+              "ToolTip": "C:\\Users\\aqiba\\source\\repos\\SuperAdminCRM\\CRM\\Views\\Home\\Privacy.cshtml",
+              "RelativeToolTip": "CRM\\Views\\Home\\Privacy.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-23T04:06:32.387Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Orders.cshtml",
+              "DocumentMoniker": "C:\\Users\\aqiba\\source\\repos\\SuperAdminCRM\\CRM\\Views\\Home\\Orders.cshtml",
+              "RelativeDocumentMoniker": "CRM\\Views\\Home\\Orders.cshtml",
+              "ToolTip": "C:\\Users\\aqiba\\source\\repos\\SuperAdminCRM\\CRM\\Views\\Home\\Orders.cshtml",
+              "RelativeToolTip": "CRM\\Views\\Home\\Orders.cshtml",
+              "ViewState": "AQIAAP0AAAAANDMzMzMrwAoBAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-23T04:06:18.293Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Mask.cshtml",
+              "DocumentMoniker": "C:\\Users\\aqiba\\source\\repos\\SuperAdminCRM\\CRM\\Views\\Home\\Mask.cshtml",
+              "RelativeDocumentMoniker": "CRM\\Views\\Home\\Mask.cshtml",
+              "ToolTip": "C:\\Users\\aqiba\\source\\repos\\SuperAdminCRM\\CRM\\Views\\Home\\Mask.cshtml",
+              "RelativeToolTip": "CRM\\Views\\Home\\Mask.cshtml",
+              "ViewState": "AQIAAG4AAAAAQDMzMzPbv4QAAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-23T04:05:48.904Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Detuct.cshtml",
+              "DocumentMoniker": "C:\\Users\\aqiba\\source\\repos\\SuperAdminCRM\\CRM\\Views\\Home\\Detuct.cshtml",
+              "RelativeDocumentMoniker": "CRM\\Views\\Home\\Detuct.cshtml",
+              "ToolTip": "C:\\Users\\aqiba\\source\\repos\\SuperAdminCRM\\CRM\\Views\\Home\\Detuct.cshtml",
+              "RelativeToolTip": "CRM\\Views\\Home\\Detuct.cshtml",
+              "ViewState": "AQIAAEoAAAAANDMzMzMrwGEAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-23T04:04:54.464Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "clients.cshtml",
+              "DocumentMoniker": "C:\\Users\\aqiba\\source\\repos\\SuperAdminCRM\\CRM\\Views\\Home\\clients.cshtml",
+              "RelativeDocumentMoniker": "CRM\\Views\\Home\\clients.cshtml",
+              "ToolTip": "C:\\Users\\aqiba\\source\\repos\\SuperAdminCRM\\CRM\\Views\\Home\\clients.cshtml",
+              "RelativeToolTip": "CRM\\Views\\Home\\clients.cshtml",
+              "ViewState": "AQIAANoAAAAAAAAAAACQPesAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-23T04:04:26.759Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "BulkUploadLeads.cshtml",
+              "DocumentMoniker": "C:\\Users\\aqiba\\source\\repos\\SuperAdminCRM\\CRM\\Views\\Home\\BulkUploadLeads.cshtml",
+              "RelativeDocumentMoniker": "CRM\\Views\\Home\\BulkUploadLeads.cshtml",
+              "ToolTip": "C:\\Users\\aqiba\\source\\repos\\SuperAdminCRM\\CRM\\Views\\Home\\BulkUploadLeads.cshtml",
+              "RelativeToolTip": "CRM\\Views\\Home\\BulkUploadLeads.cshtml",
+              "ViewState": "AQIAAHEBAAAAODMzM3MvwH4BAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-23T04:03:59.332Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "AllNotifications.cshtml",
+              "DocumentMoniker": "C:\\Users\\aqiba\\source\\repos\\SuperAdminCRM\\CRM\\Views\\Home\\AllNotifications.cshtml",
+              "RelativeDocumentMoniker": "CRM\\Views\\Home\\AllNotifications.cshtml",
+              "ToolTip": "C:\\Users\\aqiba\\source\\repos\\SuperAdminCRM\\CRM\\Views\\Home\\AllNotifications.cshtml",
+              "RelativeToolTip": "CRM\\Views\\Home\\AllNotifications.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-23T04:03:57.936Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "AdminOrders.cshtml",
+              "DocumentMoniker": "C:\\Users\\aqiba\\source\\repos\\SuperAdminCRM\\CRM\\Views\\Home\\AdminOrders.cshtml",
+              "RelativeDocumentMoniker": "CRM\\Views\\Home\\AdminOrders.cshtml",
+              "ToolTip": "C:\\Users\\aqiba\\source\\repos\\SuperAdminCRM\\CRM\\Views\\Home\\AdminOrders.cshtml",
+              "RelativeToolTip": "CRM\\Views\\Home\\AdminOrders.cshtml",
+              "ViewState": "AQIAAFUAAAAANTMzMzMrwGAAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-23T04:03:43.768Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "AddServices.cshtml",
+              "DocumentMoniker": "C:\\Users\\aqiba\\source\\repos\\SuperAdminCRM\\CRM\\Views\\Home\\AddServices.cshtml",
+              "RelativeDocumentMoniker": "CRM\\Views\\Home\\AddServices.cshtml",
+              "ToolTip": "C:\\Users\\aqiba\\source\\repos\\SuperAdminCRM\\CRM\\Views\\Home\\AddServices.cshtml",
+              "RelativeToolTip": "CRM\\Views\\Home\\AddServices.cshtml",
+              "ViewState": "AQIAAEYAAAAAMjMzMzMbwF0AAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-23T04:03:19.146Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "LeadRate.cshtml",
+              "DocumentMoniker": "C:\\Users\\aqiba\\source\\repos\\SuperAdminCRM\\CRM\\Views\\Home\\LeadRate.cshtml",
+              "RelativeDocumentMoniker": "CRM\\Views\\Home\\LeadRate.cshtml",
+              "ToolTip": "C:\\Users\\aqiba\\source\\repos\\SuperAdminCRM\\CRM\\Views\\Home\\LeadRate.cshtml",
+              "RelativeToolTip": "CRM\\Views\\Home\\LeadRate.cshtml",
+              "ViewState": "AQIAAD8AAAAANDMzMzMrwEcAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-23T04:03:05.094Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "LeadForm.cshtml",
+              "DocumentMoniker": "C:\\Users\\aqiba\\source\\repos\\SuperAdminCRM\\CRM\\Views\\Home\\LeadForm.cshtml",
+              "RelativeDocumentMoniker": "CRM\\Views\\Home\\LeadForm.cshtml",
+              "ToolTip": "C:\\Users\\aqiba\\source\\repos\\SuperAdminCRM\\CRM\\Views\\Home\\LeadForm.cshtml",
+              "RelativeToolTip": "CRM\\Views\\Home\\LeadForm.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-23T03:59:31.809Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "AllLeads.cshtml",
+              "DocumentMoniker": "C:\\Users\\aqiba\\source\\repos\\SuperAdminCRM\\CRM\\Views\\Home\\AllLeads.cshtml",
+              "RelativeDocumentMoniker": "CRM\\Views\\Home\\AllLeads.cshtml",
+              "ToolTip": "C:\\Users\\aqiba\\source\\repos\\SuperAdminCRM\\CRM\\Views\\Home\\AllLeads.cshtml",
+              "RelativeToolTip": "CRM\\Views\\Home\\AllLeads.cshtml",
+              "ViewState": "AQIAAAsAAADIMjMzM5MwwBcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-23T02:24:23.269Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\aqiba\\source\\repos\\SuperAdminCRM\\CRM\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "CRM\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\aqiba\\source\\repos\\SuperAdminCRM\\CRM\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "CRM\\Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAwZmZmZmYkwB4AAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-22T09:12:26.995Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\aqiba\\source\\repos\\SuperAdminCRM\\CRM\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "CRM\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
+              "ToolTip": "C:\\Users\\aqiba\\source\\repos\\SuperAdminCRM\\CRM\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
+              "RelativeToolTip": "CRM\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
+              "ViewState": "AQIAAE4AAAAAAAAAAAAAAE4AAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-23T02:21:40.47Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "ChangePassword.cshtml",
+              "DocumentMoniker": "C:\\Users\\aqiba\\source\\repos\\SuperAdminCRM\\CRM\\Views\\Profile\\ChangePassword.cshtml",
+              "RelativeDocumentMoniker": "CRM\\Views\\Profile\\ChangePassword.cshtml",
+              "ToolTip": "C:\\Users\\aqiba\\source\\repos\\SuperAdminCRM\\CRM\\Views\\Profile\\ChangePassword.cshtml",
+              "RelativeToolTip": "CRM\\Views\\Profile\\ChangePassword.cshtml",
+              "ViewState": "AQIAANQAAAAAAAAAAAAAANQAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-23T02:21:30.176Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\aqiba\\source\\repos\\SuperAdminCRM\\CRM\\appsettings.json",
+              "RelativeDocumentMoniker": "CRM\\appsettings.json",
+              "ToolTip": "C:\\Users\\aqiba\\source\\repos\\SuperAdminCRM\\CRM\\appsettings.json",
+              "RelativeToolTip": "CRM\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-05-22T16:00:13.644Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\aqiba\\source\\repos\\SuperAdminCRM\\CRM\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "CRM\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\aqiba\\source\\repos\\SuperAdminCRM\\CRM\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "CRM\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAABQAAAAAwP7///8AwCsAAAA9AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-22T09:15:03.199Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "SuperAdmin.csproj",
+              "DocumentMoniker": "C:\\Users\\aqiba\\source\\repos\\SuperAdminCRM\\CRM\\SuperAdmin.csproj",
+              "RelativeDocumentMoniker": "CRM\\SuperAdmin.csproj",
+              "ToolTip": "C:\\Users\\aqiba\\source\\repos\\SuperAdminCRM\\CRM\\SuperAdmin.csproj",
+              "RelativeToolTip": "CRM\\SuperAdmin.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-05-22T09:12:14.8Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
